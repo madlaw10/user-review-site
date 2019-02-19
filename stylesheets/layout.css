@@ -1,0 +1,18 @@
+.reviewbox{
+    float: left;
+}
+
+.rank{
+    float: left;
+
+}
+
+.summary{
+    float: left;
+
+}
+.reviewboxes{
+    justify-content: left;
+    display: grid;
+    
+}
