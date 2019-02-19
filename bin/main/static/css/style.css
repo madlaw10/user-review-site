@@ -112,7 +112,7 @@
 
   .content__search__box {
     border-radius: 360px;
-    border-color: black;
+    border-color: transparent;
     color: darkgray;
     font-style: italic;
     height: 2rem;
@@ -128,7 +128,7 @@
   .content__search__button {
     background-color: white;
     border-radius: 360px;
-    border-color: black;
+    border-color: transparent;
     color: black;
     font-weight: bold;
     height: 2rem;

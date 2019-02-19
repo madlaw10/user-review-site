@@ -97,11 +97,12 @@
     background-color: lightgray;
     border-right: 0.1rem solid black;
     border-left: 0.1rem solid black;
+    box-shadow: 3px 3px 3px darkgray;
     color: black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     min-height: 30rem;
-    margin-top: 6rem;
+    margin-top: 4.9rem;
     
   }
 
@@ -245,11 +246,6 @@
     margin: 0;
     text-align: center;
   }
-  
-  .review2 {
-    background-color: #ccc;
-    color: #444;
-  }
 
   .review,
   .review2,
@@ -260,11 +256,21 @@
     padding-left: 1rem;
     border-right: 0.1rem solid black;
     border-left: 0.1rem solid black;
+    box-shadow: 3px 3px 3px darkgray;
+  }
+
+  .review2 {
+    background-color: rgb(230, 230, 230);
+    color: #444;
   }
 
   .review__header,
   .review2__header,
   .review3__header {
-    text-align: center;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .review__content {
     padding: 2rem;
   }
