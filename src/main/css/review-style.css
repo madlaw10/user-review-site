@@ -1,26 +1,31 @@
-  * {
+      * {
       margin:0;
       font-family: sans-serif;
       padding:0;
-    
-  } 
+      } 
 
-
-  
-
-  .sidebar {
-          grid-area: sidebar;
-      }
-  
-      .sidebar3 {
-        grid-area: sidebar3;
+      a {
+        text-decoration:  none;
+        color: white;
       }
 
-      .sidebar2 {
-          grid-area: sidebar2;
-      }
-  
       .content {
+        grid-area: content;
+      }
+
+      .review {
+        grid-area: review;
+      }
+  
+      .review2 {
+        grid-area: review2;
+      }
+
+      .review3 {
+          grid-area: review3;
+      }
+  
+      .header {
           grid-area: content;
       }
   
@@ -46,12 +51,15 @@
       background-size: cover;
       display: grid;
       grid-gap: 0em;
-      grid-template-columns: .7fr 1fr 1fr 1fr .7fr;
+      grid-template-columns: .4fr  1fr .4fr;
       grid-template-areas:
       
-      "content content content content content"
-      ". sidebar  sidebar2 sidebar3 ."
-      "footer footer footer footer footer"
+      ". . ."
+      ". content ."
+      ". review ."
+      ". review2 ."
+      ". review3 ."
+      " footer footer footer "
     }
   
       /* @media only screen and (min-width: 500px)  {
@@ -60,8 +68,8 @@
           grid-template-columns: 20% auto;
           grid-template-areas:
       "header   header"
-          "sidebar  content"
-          "sidebar2 sidebar2"
+          "review  content"
+          "review2 review2"
           "footer   footer";
       }
       }
@@ -72,7 +80,7 @@
               grid-template-columns: 120px auto 120px;
               grid-template-areas:
         "header  header  header"
-              "sidebar content sidebar2"
+              "review content review2"
               "footer  footer  footer";
               max-width: 600px;
           }
@@ -84,83 +92,42 @@
     padding: 10px;
     font-size: 150%; 
   }
-  
+
   .content {
-    background-image: url("https://s.w-x.co/thinkstockphotos-79994979.jpg");
-    background-size: cover;
-    border-radius: 0;
-    box-shadow: 5px 5px 5px black;
-    font-size: 300%;
-    margin: 0;
-    text-align: center;
-    height: auto;
-    width: 100%;
+    background-color: lightgray;
+    border-right: 0.1rem solid black;
+    border-left: 0.1rem solid black;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     min-height: 30rem;
-    text-shadow: 5px 5px 5px black;
-  }
-
-  .content h1 {
-    font-style: italic;
-    margin-top: 10rem;
-    margin-bottom: 1rem;
-  }
-  
-  .content__experience__image {
-    height: 4rem;
-    width: 4rem;
-  }
-
-  .content__search__box {
-    border-radius: 360px;
-    border-color: black;
-    color: darkgray;
-    font-style: italic;
-    height: 2rem;
-    padding-left: 1rem;
-    width: 20rem;
-  }
-  
-  .content__search__box:focus-within {
-    color: black;
-    font-style: normal;
-  }
-  
-  .content__search__button {
-    background-color: white;
-    border-radius: 360px;
-    border-color: black;
-    color: black;
-    font-weight: bold;
-    height: 2rem;
-    opacity: 0.6;
-    width: 7rem;
+    margin-top: 6rem;
     
   }
-  
-  .content__search__button:hover {
-    background-color: black;
-    border-radius: 360px;
-    border-color: white;
-    color: white;
-    font-weight: bold;
-    height: 2rem;
-    opacity: 0.6;
-    width: 7rem;
-  }
-  
 
-  .footer {
-    font-size: 1rem;
+  .content__experience__description {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
-  
-  .live {
-    font-family: Brush Script MT, Brush Script Std, cusrive;
-    vertical-align: 4rem;
-    font-size: 3rem;
-    font-style: italic;
-    font-weight: normal;
-    padding-right: 1rem; 
-    text-shadow: 5px 5px 5px black;
+
+  .content__experience__image {
+    align-self: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 15rem;
+    justify-self: right;
+    width: 15rem;
+  }
+
+  .content__experience__name {
+    align-self: center;
+    font-size: 5rem;
+    margin-right: 4rem;
+  }
+
+  .content__rating__image {
+    height: 4rem;
+    width: auto;
   }
   
   .header {
@@ -209,6 +176,7 @@
     padding-right: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    
   }
 
   .header__logo:hover {
@@ -233,38 +201,70 @@
     color: black;
     border-radius: 360px;
   }
+
+  .header__search__box {
+    border-radius: 360px;
+    border-color: black;
+    color: darkgray;
+    font-style: italic;
+    height: 2rem;
+    padding-left: 1rem;
+    width: 20rem;
+  }
+  
+  .header__search__box:focus-within {
+    color: black;
+    font-style: normal;
+  }
+  
+  .header__search__button {
+    background-color: white;
+    border-radius: 360px;
+    border-color: black;
+    color: black;
+    font-weight: bold;
+    height: 2rem;
+    opacity: 0.6;
+    width: 7rem;
+    
+  }
+  
+  .header__search__button:hover {
+    background-color: black;
+    border-radius: 360px;
+    border-color: white;
+    color: white;
+    font-weight: bold;
+    height: 2rem;
+    opacity: 0.6;
+    width: 7rem;
+  }
+
   .footer {
     background-color: rgb(2, 2, 2);
     margin: 0;
     text-align: center;
   }
   
-  .sidebar2 {
+  .review2 {
     background-color: #ccc;
     color: #444;
   }
 
-  
-  .sidebar,
-  .sidebar2,
-  .sidebar3 {
+  .review,
+  .review2,
+  .review3 {
     background-color: white;
     color: black;
     padding-right: 1rem;
     padding-left: 1rem;
-  }
-
-  .sidebar2 {
     border-right: 0.1rem solid black;
     border-left: 0.1rem solid black;
-  
   }
 
-  .sidebar3 {
-    box-shadow: 5px 5px 5px black;
-  }
-
-  .sidebar__header {
+  .review__header,
+  .review2__header,
+  .review3__header {
     text-align: center;
     padding: 2rem;
   }
