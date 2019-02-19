@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping("/review") 
 		public String review() {
 			return "review";
-		
+		// Q: Add method here to pull Reviews collection?
 	}
 
 }
