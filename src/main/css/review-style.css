@@ -245,11 +245,6 @@
     margin: 0;
     text-align: center;
   }
-  
-  .review2 {
-    background-color: #ccc;
-    color: #444;
-  }
 
   .review,
   .review2,
@@ -260,6 +255,11 @@
     padding-left: 1rem;
     border-right: 0.1rem solid black;
     border-left: 0.1rem solid black;
+  }
+
+  .review2 {
+    background-color: rgb(230, 230, 230);
+    color: #444;
   }
 
   .review__header,
