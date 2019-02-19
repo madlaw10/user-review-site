@@ -5,10 +5,15 @@
     
   } 
 
+  a {
+    text-decoration: none;
+  }
 
-  
+  a:hover {
+    color: black;
+  }
 
-  .sidebar {
+      .sidebar {
           grid-area: sidebar;
       }
   
@@ -59,7 +64,7 @@
   
           grid-template-columns: 20% auto;
           grid-template-areas:
-      "header   header"
+          "header   header"
           "sidebar  content"
           "sidebar2 sidebar2"
           "footer   footer";
@@ -78,6 +83,10 @@
           }
       } */
   
+
+
+
+
   .box {
     background-color: #444;
     color: #fff;
@@ -147,7 +156,6 @@
     opacity: 0.6;
     width: 7rem;
   }
-  
 
   .footer {
     font-size: 1rem;
@@ -207,7 +215,7 @@
     justify-self: center;
     font-style: italic;
     padding-right: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     padding-bottom: 0.5rem;
   }
 
@@ -221,18 +229,32 @@
   }
 
   .header__review__button {
+    color: white;
     list-style-type: none;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    text-decoration: none;
   }
 
   .header__review__button:hover {
     background-color: white;
-    color: black;
     border-radius: 360px;
+    color: black;
+    text-decoration: none;
   }
+  
+  /* .header__review__button a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header__review__button a:hover {
+    text-decoration:  none;
+    color: black;
+  } */
+
   .footer {
     background-color: rgb(2, 2, 2);
     margin: 0;
