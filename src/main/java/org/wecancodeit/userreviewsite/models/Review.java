@@ -1,8 +1,9 @@
-package org.wecancodeit.userreviewsite;
+package org.wecancodeit.userreviewsite.models;
 
 import java.util.Date;
 
 public class Review {
+
 	private int id;
 	private String title;
 	private int rating;
@@ -52,6 +53,12 @@ public class Review {
 
 	public void edit(String newReview) {
 		this.content = newReview;
+	}
+	
+	@Override
+	public String toString() {
+		return "Title: " + this.getTitle() + "; rating (out of five): " + this.getRating() + "; author: " + this.getAuthor() + "; date: " + this.getDate() + "; category: "
+				+ this.getCategory() + "; content:" + this.getContent();
 	}
 
 }

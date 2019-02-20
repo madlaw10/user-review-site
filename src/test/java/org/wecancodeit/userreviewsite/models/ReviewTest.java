@@ -1,8 +1,9 @@
-package org.wecancodeit.userreviewsite;
+package org.wecancodeit.userreviewsite.models;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.wecancodeit.userreviewsite.models.Review;
 
 public class ReviewTest {
 

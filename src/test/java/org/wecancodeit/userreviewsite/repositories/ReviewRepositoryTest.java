@@ -1,17 +1,23 @@
-package org.wecancodeit.userreviewsite;
+package org.wecancodeit.userreviewsite.repositories;
+
+import java.util.HashMap;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.wecancodeit.userreviewsite.models.Review;
+import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 
 public class ReviewRepositoryTest {
 
+	HashMap<Integer, Review> testReviews;
 	ReviewRepository underTest;
 	Review testReview;
 
 	@Before
 	public void setup() {
-		underTest = new ReviewRepository();
+		testReviews = new HashMap<Integer, Review>();
+		underTest = new ReviewRepository(testReviews);
 		testReview = new Review(123, "title", 0, "author", null, "category", "content");
 	}
 

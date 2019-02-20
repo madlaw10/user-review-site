@@ -1,7 +1,9 @@
-package org.wecancodeit.userreviewsite;
+package org.wecancodeit.userreviewsite.repositories;
 
 import java.util.Collection;
 import java.util.HashMap;
+
+import org.wecancodeit.userreviewsite.models.Review;
 
 public class ReviewRepository {
 	
@@ -9,7 +11,10 @@ public class ReviewRepository {
 
 	public Collection<Review> getReviews() {
 		return reviews.values(); 
-		// Q: Do we need a toString() in Review class if not a console application?
+	}
+
+	public ReviewRepository(HashMap<Integer, Review> reviews) {
+		this.reviews = reviews;
 	}
 
 	public int getCount() {
