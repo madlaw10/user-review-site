@@ -27,6 +27,18 @@
     font-size: 1rem;
     
 }
+.reviewform{
+    width: 100%;
+    margin-top: 80px;
+    box-shadow: 1px 1px 1px black;
+    background-color: gray;
+    align-self: center;
+    
+
+
+}
+    
+
 
 .rate {
     float: left;
@@ -103,16 +115,19 @@ a {
       }
 
 .wrapper {
-    background-image: url("../media/background5.jpg");
-    height: 100%;
+    /* background-image: url("../media/manoncomputer.png"); */
+    /* height: 100%; */
     background-attachment: fixed;
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: .7fr 1fr 1fr 1fr .7fr;
+    grid-template-columns:  1fr;
+    
     grid-template-areas:
+    
+   
     
     "content content content content content"
     ". sidebar  sidebar2 sidebar3 ."
@@ -355,6 +370,6 @@ a {
     align-items: center;
     padding: 1rem;
     height: 3rem;
-    margin-top: 70px;
+    
     }
 
