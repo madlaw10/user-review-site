@@ -1,8 +1,9 @@
-package org.wecancodeit.userreviewsite;
+package org.wecancodeit.userreviewsite.models;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.wecancodeit.userreviewsite.models.Review;
 
 public class ReviewTest {
 
@@ -10,7 +11,7 @@ public class ReviewTest {
 
 	@Before
 	public void setup() {
-		underTest = new Review(1, "title", 0, "author", null, "category", "content");
+		underTest = new Review("title", 0, "imageURL", "author", "category", "content");
 	}
 
 	@Test
