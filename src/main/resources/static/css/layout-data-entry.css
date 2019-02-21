@@ -27,6 +27,12 @@
     font-size: 1rem;
     
 }
+.box sidebar{
+    width: 100%;
+    margin-top: 170px;
+}
+    
+
 
 .rate {
     float: left;
@@ -103,16 +109,19 @@ a {
       }
 
 .wrapper {
-    background-image: url("../media/background5.jpg");
-    height: 100%;
+    background-image: url("../media/manoncomputer.png");
+    /* height: 100%; */
     background-attachment: fixed;
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: .7fr 1fr 1fr 1fr .7fr;
+    grid-template-columns:  1fr;
+    
     grid-template-areas:
+    
+   
     
     "content content content content content"
     ". sidebar  sidebar2 sidebar3 ."
