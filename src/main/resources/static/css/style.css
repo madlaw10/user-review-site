@@ -227,8 +227,11 @@ justify-self: center;
 font-style: italic;
 padding-left: 4rem;
 padding-right: 2rem;
-padding-top: 1rem;
-padding-bottom: 0.5rem;
+}
+
+.header__logo__png {
+  height: 4rem;
+  width: auto;
 }
 
 .header__logo:hover {
