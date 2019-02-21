@@ -106,7 +106,7 @@ a {
     background-image: url("../media/background5.jpg");
     height: 100%;
     background-attachment: fixed;
-    background-position: center;
+    background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
