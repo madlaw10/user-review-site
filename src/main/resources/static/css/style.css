@@ -52,10 +52,10 @@ color: black;
   }
 
 .wrapper {
-  background-color: transparent;
+  background-color: #EDEAE5;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: .4fr 1fr 1fr 1fr .4fr;
+  grid-template-columns: .4fr .8fr 1fr .8fr .4fr;
   grid-template-areas:
   
   "content content content content content"
@@ -179,7 +179,7 @@ font-size: 1rem;
 
 
 .header {
-background-color: #026670;
+background-color: white;
 box-shadow: 1px 1px 1px black;
 color: #fff;
 display: flex;
@@ -199,7 +199,6 @@ flex-direction: row;
 font-size: 1rem;
 justify-content: space-around;
 margin: 1rem;
-
 }
 
 .header__login__button:hover {
@@ -209,24 +208,31 @@ border-radius: 360px;
 }
 
 .header__login__button {
+background-color: #026670;
+border-radius: 360px;
+color: white;
 list-style-type: none;
 padding-left: 2rem;
 padding-right: 2rem;
 padding-top: 0.5rem;
 padding-bottom: 0.5rem;
+margin-left: 1rem;
+margin-right: 4rem;
 }
 
 .header__logo {
+color: #026670;
 list-style-type: none;
 justify-self: center;
 font-style: italic;
+padding-left: 4rem;
 padding-right: 2rem;
 padding-top: 1rem;
 padding-bottom: 0.5rem;
 }
 
 .header__logo:hover {
-text-shadow: 2px 2px 2px white;
+text-shadow: 1px 1px 1px black;
 }
 
 .header__logo__tm {
@@ -235,8 +241,12 @@ vertical-align: 1rem;
 }
 
 .header__review__button {
+background-color: #026670;
+border-radius: 360px;
 color: white;
 list-style-type: none;
+margin-left: 1rem;
+margin-right: 1rem;
 padding-left: 2rem;
 padding-right: 2rem;
 padding-top: 0.5rem;
