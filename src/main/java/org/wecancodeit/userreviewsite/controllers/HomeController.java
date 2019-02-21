@@ -1,7 +1,6 @@
 package org.wecancodeit.userreviewsite.controllers;
 
-import java.util.Date;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +12,7 @@ import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 @Controller
 public class HomeController {
 	
-	private HashMap<Integer, Review> reviews = new HashMap<Integer, Review>();
-	private ReviewRepository repository = new ReviewRepository(reviews);
+	private ReviewRepository repository = new ReviewRepository(new ArrayList<Review>());
 
 	@GetMapping("/")
 	public String home() {
@@ -24,24 +22,24 @@ public class HomeController {
 	@GetMapping("/reviews") // list each review in HTML via th:each="person : ${people}"
 	public String getReviews(Model model) {
 		model.addAttribute("reviews", repository.getReviews());
-		return "reviews"; 
+		return "review"; 
 	}
 
 	@GetMapping("/reviews/add")
 	public String getReviewForm() {	
-		return "reviews/add";
+		return "writeareview";
 	
 	}
 	
 	@PostMapping("/reviews/add")
-	public String addReview(int id, String title, int rating, String author, Date date, String category, String content) {
-		repository.addReview(new Review(id, title, rating, author, date, category, content));
+	public String addReview(String title, int rating, String imageURL, String author, String category, String content) {
+		repository.addReview(new Review(title, rating, imageURL, author,  content, content));
 		return "redirect:/reviews/verify";
 	}
 	
 	@GetMapping("/reviews/verify")	
 	public String getReview() {
-		return "reviews/verify";		
+		return "verifyreview";		
 		
 	}
 	

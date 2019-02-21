@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,81 @@
     <link rel="stylesheet" href="css/review-style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
-<div class="wrapper">
-    <div class="header">
-        <ul>
-            <li class="header__logo"><a href="/">vicuriously.com</a><span class="header__logo__tm">™</span></li>
-        </ul>
-        <ul>
-            <input class="header__search__box" type="search" value="What experience are you looking for...?">
-            <input class="header__search__button" type="submit" value="Search">    
-        </ul>
-        <ul class="header__buttons">
-            <li class="header__review__button"><a href="writeareview">Write Review</a></li>
-            <li class="header__login__button"><a>Login</a></li>
-        </ul>
-    </div><!--box header-->
-    <div class="box content">
-        <h2 class="content__experience__name">Experience Name</h2>
-        <img class="content__experience__image" src="https://s.w-x.co/thinkstockphotos-79994979.jpg">
-        <img class="content__rating__image" src="/media/four-stars.png" alt="Four Stars">
-        <p class="content__experience__description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat, consequuntur assumenda debitis velit!
-        </p>
-             
-    </div><!--box content-->
-    <div class="box review">
-        <h2 class="review__header">Review 1</h2>
-        <p class="review__content">
-               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat, consequuntur assumenda debitis velit!
-        </p>
-        
 
-    </div><!--box review-->
-    <div class="box review2">
+    <div class="wrapper">
+        <div class="header">
+            <ul>
+                <li class="header__logo"><a href="/">vicuriously.com</a><span class="header__logo__tm">™</span></li>
+            </ul>
+            <ul>
+                <input class="header__search__box" type="search" value="What experience are you looking for...?">
+                <input class="header__search__button" type="submit" value="Search">
+            </ul>
+            <ul class="header__buttons">
+                <li class="header__review__button"><a href="reviews/add">Write Review</a></li>
+                <li class="header__login__button"><a>Login</a></li>
+            </ul>
+        </div>
+        <!--box header-->
+        <div class="box content">
+            <h2 class="content__experience__name">Experience Name</h2>
+            <img class="content__experience__image" src="https://s.w-x.co/thinkstockphotos-79994979.jpg">
+            <img class="content__rating__image" src="/media/four-stars.png" alt="Four Stars">
+            <p class="content__experience__description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit
+                provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat,
+                consequuntur assumenda debitis velit!
+            </p>
+
+        </div>
+        <!--box content-->
+        <div class="box review">
+            <h2 class="review__header">Review 1</h2>
+            <p class="review__content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit
+                provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat,
+                consequuntur assumenda debitis velit!
+            </p>
+
+
+        </div>
+        <!--box review-->
+        <div class="box review2">
+            <div>
+                <ul>
+                    <li th:each="review : ${reviews}">
+                        <span th:text="|${review.title}: ${review.content}|">Default Value</span>>
+                    </li>
+                </ul>
+            </div>
             <h2 class="review2__header">Review 2</h2>
-            <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid vitae illum vero nemo amet.
+            <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident
+                officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi
+                voluptatibus nam aliquid vitae illum vero nemo amet.
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid vitae illum vero nemo amet.</p>
-    </div><!--box review2-->
-    <div class="box review3">       
-        <h2 class="review3__header">Review 3</h2>
-        <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid vitae illum vero nemo amet.
-       
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid vitae illum vero nemo amet.</p>
-    </div><!--box review3-->
-    <div class="box footer">
-        <footer>Team 3, 2019.</footer>
-    </div><!--box footer-->
-  </div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem
+                asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid
+                vitae illum vero nemo amet.</p>
+        </div>
+        <!--box review2-->
+        <div class="box review3">
+            <h2 class="review3__header">Review 3</h2>
+            <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident
+                officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi
+                voluptatibus nam aliquid vitae illum vero nemo amet.
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem
+                asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid
+                vitae illum vero nemo amet.</p>
+        </div>
+        <!--box review3-->
+        <div class="box footer">
+            <footer>Team 3, 2019.</footer>
+        </div>
+        <!--box footer-->
+    </div>
 </body>
+
 </html>
