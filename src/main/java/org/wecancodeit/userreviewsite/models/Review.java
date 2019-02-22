@@ -1,14 +1,27 @@
 package org.wecancodeit.userreviewsite.models;
 
-public class Review {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
+
+@Entity
+public class Review {
+@Id //currently points to title as primary key
+@GeneratedValue
+	private Long id;
 	private String title;
 	private int rating;
 	private String imageURL;
 	private String author;
-	private String category;
+	private String category; //probably change this to Class??
+	@Lob //allows for content greater than 255 characters
 	private String content;
-
+	//default contructor
+	public Review() {	
+	}
 	public Review(String title, int rating, String imageURL, String author, String category, String content) {
 		this.title = title;
 		this.rating = rating;
@@ -17,7 +30,9 @@ public class Review {
 		this.category = category;
 		this.content = content;
 	}
-
+	public Long getId() {
+		return id;
+	}
 	public String getTitle() {
 		return title;
 	}

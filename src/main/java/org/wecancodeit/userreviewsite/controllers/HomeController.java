@@ -34,7 +34,7 @@ public class HomeController {
 	
 	@PostMapping("/reviews/add")
 	public String addReview(String title, int rating, String imageURL, String author, String category, String content) {
-		repository.addReview(new Review(title, rating, imageURL, author,  content, content));
+		repository.addReview(new Review(title, rating, imageURL, author,  category, content));
 		return "redirect:/reviews/" + title;
 	}
 	
