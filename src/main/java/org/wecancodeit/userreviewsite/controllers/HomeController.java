@@ -1,7 +1,5 @@
 package org.wecancodeit.userreviewsite.controllers;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +11,7 @@ import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 @Controller
 public class HomeController {
 	
-	private ReviewRepository repository = new ReviewRepository(new ArrayList<Review>());
+	ReviewRepository reviewRepo;
 
 	@GetMapping("/")
 	public String home() {
@@ -22,7 +20,7 @@ public class HomeController {
 
 	@GetMapping("/reviews") // list each review in HTML via th:each="person : ${people}"
 	public String getReviews(Model model) {
-		model.addAttribute("reviews", repository.getReviews());
+		model.addAttribute("reviews", reviewRepo.findAll());
 		return "review"; 
 	}
 
@@ -34,19 +32,13 @@ public class HomeController {
 	
 	@PostMapping("/reviews/add")
 	public String addReview(String title, int rating, String imageURL, String author, String category, String content) {
-		repository.addReview(new Review(title, rating, imageURL, author,  content, content));
+		reviewRepo.save(new Review(title, rating, imageURL, author,  content, content));
 		return "redirect:/reviews/" + title;
 	}
-	
-//	@GetMapping("/reviews/verify")	
-//	public String getReview() {
-//		return "verifyreview";		
-//		
-//	}
-	
+		
 	@GetMapping("/reviews/{title}")	
 	public String getReview(@PathVariable String title, Model model) {
-		model.addAttribute("review", repository.findReview(title));
+		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
 		return "verifyreview";		
 	}
 	
