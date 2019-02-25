@@ -15,7 +15,7 @@ public class Category {
 	private Long id;
 	private String tag;
 
-	@OneToMany(mappedBy="tag")
+	@OneToMany(mappedBy="category")
 	private Collection<Review> reviews;
 
 	// Default constructor
@@ -36,6 +36,11 @@ public class Category {
 
 	public Collection<Review> getReviews() {
 		return reviews;
+	}
+	
+	public String toString() {
+		return tag + this.getReviews();
+		
 	}
 
 

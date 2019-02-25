@@ -25,7 +25,7 @@ public class HomeController {
 		return "experience";
 	}
 	
-	@GetMapping("/{category}")
+	@GetMapping("/{tag}")
 	public String getCategory(@PathVariable String tag, Model model) {
 		model.addAttribute("category", categoryRepo.findCategoryByTag(tag));
 		return "category";

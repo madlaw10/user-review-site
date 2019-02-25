@@ -67,6 +67,6 @@ public class Review {
 	@Override
 	public String toString() {
 		return "Title: " + this.getTitle() + "; Rating (out of five): " + this.getRating() + "; User: "
-				+ this.getAuthor() + "; Tags: " + this.getCategory() + "; Review:" + this.getContent();
+				+ this.getAuthor() + "; Tags: " + this.getCategory().getTag() + "; Review:" + this.getContent();
 	}
 }

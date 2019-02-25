@@ -22,8 +22,6 @@ public class Initializer implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Category category = categoryRepo.save(new Category("Amusement"));
 		reviewRepo.save(new Review("test title", 0, "test image", "test author", "test content", category));
-		
-		
 	}
 
 }
