@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.wecancodeit.userreviewsite.models.Category;
 import org.wecancodeit.userreviewsite.models.Review;
+import org.wecancodeit.userreviewsite.repositories.CategoryRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 
 @Controller
@@ -16,9 +17,13 @@ public class HomeController {
 
 	@Resource
 	ReviewRepository reviewRepo;
+	
+	@Resource
+	CategoryRepository categoryRepo;
 
 	@GetMapping("/")
-	public String home() {
+	public String getCategories(Model model) {
+		model.addAttribute("categories", categoryRepo.findAll());
 		return "home";
 	}
 
@@ -41,6 +46,7 @@ public class HomeController {
 	@PostMapping("/reviews/add")
 	public String addReview(String title, int rating, String imageURL, String author, String category, String content) {
 		reviewRepo.save(new Review(title, rating, imageURL, author, category, content));
+		categoryRepo.save(new Category(category));
 		return "redirect:/reviews/" + title;
 	}
 
