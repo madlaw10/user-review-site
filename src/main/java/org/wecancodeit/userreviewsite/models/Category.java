@@ -28,7 +28,7 @@ public class Category {
 	}
 
 	public Category(String category) {
-		this.category = category;
+		this.category = category; // to lower case??
 	}
 
 	public Long getId() {
