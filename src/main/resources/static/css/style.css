@@ -160,7 +160,6 @@ color: white;
 font-weight: bold;
 height: 2rem;
 width: 7rem;
-
 }
 
 .content__search__button:hover {
@@ -176,7 +175,6 @@ width: 7rem;
 .footer {
 font-size: 1rem;
 }
-
 
 .header {
 background-color: white;
@@ -202,8 +200,8 @@ margin: 1rem;
 }
 
 .header__login__button:hover {
-background-color: white;
-color: black;
+background-color: #fce181;
+color: white;
 border-radius: 360px;
 }
 
@@ -211,6 +209,7 @@ border-radius: 360px;
 background-color: #026670;
 border-radius: 360px;
 color: white;
+height: 1rem;
 list-style-type: none;
 padding-left: 2rem;
 padding-right: 2rem;
@@ -258,9 +257,9 @@ text-decoration: none;
 }
 
 .header__review__button:hover {
-background-color: white;
+background-color: #fce181;
 border-radius: 360px;
-color: black;
+color: white;
 text-decoration: none;
 }
 
