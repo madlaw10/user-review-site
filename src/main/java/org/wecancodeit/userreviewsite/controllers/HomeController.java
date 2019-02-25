@@ -1,46 +1,59 @@
 package org.wecancodeit.userreviewsite.controllers;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.wecancodeit.userreviewsite.models.Category;
 import org.wecancodeit.userreviewsite.models.Review;
+import org.wecancodeit.userreviewsite.repositories.CategoryRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 
 @Controller
 public class HomeController {
 
+	@Resource
 	ReviewRepository reviewRepo;
+	
+	@Resource
+	CategoryRepository categoryRepo;
 
 	@GetMapping("/")
-	public String home() {
+	public String getCategories(Model model) {
+		model.addAttribute("categories", categoryRepo.findAll());
 		return "home";
 	}
 
-	@GetMapping("/reviews") // list each review in HTML via th:each="person : ${people}"
+	@GetMapping("/experience") 
 	public String getReviews(Model model) {
-		model.addAttribute("reviews", reviewRepo.findAll());
-		return "review";
+		return "experience";
 	}
-
+	
+	@GetMapping("/{category}")
+	public String getCategory(@PathVariable String category, Model model) {
+		model.addAttribute("category", new Category(category).getReviews());
+		return "category";
+	}
+	
 	@GetMapping("/reviews/add")
 	public String getReviewForm() {
-		return "writeareview";
-
+		return "reviews-add";
 	}
 
 	@PostMapping("/reviews/add")
 	public String addReview(String title, int rating, String imageURL, String author, String category, String content) {
 		reviewRepo.save(new Review(title, rating, imageURL, author, category, content));
-
+		categoryRepo.save(new Category(category));
 		return "redirect:/reviews/" + title;
 	}
 
 	@GetMapping("/reviews/{title}")
 	public String getReview(@PathVariable String title, Model model) {
 		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
-		return "verifyreview";
+		return "reviews-verify";
 	}
 
 }
