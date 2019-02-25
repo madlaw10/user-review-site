@@ -1,9 +1,7 @@
 package org.wecancodeit.userreviewsite.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,32 +13,34 @@ public class Category {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String category;
+	private String tag;
 
-	@OneToMany(
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
-			)
-	private List<Review> reviews = new ArrayList<>();
+	@OneToMany(mappedBy="category")
+	private Collection<Review> reviews;
 
 	// Default constructor
 	public Category() {
 	}
 
-	public Category(String category) {
-		this.category = category; // to lower case??
+	public Category(String tag) {
+		this.tag = tag; 
 	}
 
 	public Long getId() {
 		return id;
 	}
 	
-	public String getCategory() {
-		return category;
+	public String getTag() {
+		return tag;
 	}
 
-	public List<Review> getReviews() {
+	public Collection<Review> getReviews() {
 		return reviews;
+	}
+	
+	public String toString() {
+		return tag + this.getReviews();
+		
 	}
 
 
