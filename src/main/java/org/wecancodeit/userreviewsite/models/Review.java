@@ -3,35 +3,39 @@ package org.wecancodeit.userreviewsite.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
-@Id //currently points to title as primary key
-@GeneratedValue
+
+	@Id 
+	@GeneratedValue
 	private Long id;
 	private String title;
 	private int rating;
 	private String imageURL;
 	private String author;
-	private String category; //probably change this to Class??
-	@Lob //allows for content greater than 255 characters
 	private String content;
-	//default contructor
-	public Review() {	
+	@ManyToOne
+	private Category category;
+
+	// default constructor
+	public Review() {
 	}
-	public Review(String title, int rating, String imageURL, String author, String category, String content) {
+
+	public Review(String title, int rating, String imageURL, String author, String content, Category category) {
 		this.title = title;
 		this.rating = rating;
 		this.imageURL = imageURL;
 		this.author = author;
-		this.category = category;
 		this.content = content;
+		this.category = category;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -39,7 +43,7 @@ public class Review {
 	public int getRating() {
 		return rating;
 	}
-	
+
 	public String getImageURL() {
 		return imageURL;
 	}
@@ -48,21 +52,21 @@ public class Review {
 		return author;
 	}
 
-	public String getCategory() {
-		return category;
-	}
-
 	public String getContent() {
 		return content;
+	}
+	
+	public Category getCategory() {
+		return category;
 	}
 
 	public void edit(String newReview) {
 		this.content = newReview;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Title: " + this.getTitle() + "; Rating (out of five): " + this.getRating() + "; User: " + this.getAuthor() + "; Tags: "
-				+ this.getCategory() + "; Review:" + this.getContent();
+		return "Title: " + this.getTitle() + "; Rating (out of five): " + this.getRating() + "; User: "
+				+ this.getAuthor() + "; Tags: " + this.getCategory() + "; Review:" + this.getContent();
 	}
 }

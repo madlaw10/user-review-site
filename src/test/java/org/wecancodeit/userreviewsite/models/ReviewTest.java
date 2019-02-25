@@ -11,7 +11,7 @@ public class ReviewTest {
 
 	@Before
 	public void setup() {
-		underTest = new Review("title", 0, "imageURL", "author", "category", "content");
+//		underTest = new Review("title", 0, "imageURL", "author", "category", "content");
 	}
 
 	@Test
