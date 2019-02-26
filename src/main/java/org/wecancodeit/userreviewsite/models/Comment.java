@@ -12,13 +12,13 @@ public class Comment {
 	private Long id;
 	private String commentContent;
 	@ManyToOne
-	private Review reviewToComment;
+	private Review review;
 	private String userName;
 	
-	public Comment(String commentContent, String userName, Review reviewToComment) {
+	public Comment(String commentContent, String userName, Review review) {
 		this.commentContent = commentContent;
 		this.userName = userName;
-		this.reviewToComment = reviewToComment;
+		this.review = review;
 	}
 
 	public Long getId() {
@@ -29,8 +29,8 @@ public class Comment {
 		return commentContent;
 	}
 
-	public Review getReviewToComment() {
-		return reviewToComment;
+	public Review getReview() {
+		return review;
 	}
 
 	public String getUserName() {

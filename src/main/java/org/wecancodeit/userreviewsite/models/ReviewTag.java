@@ -31,7 +31,7 @@ public class ReviewTag {
 		return id;
 	}
 
-	public String getTagsname() {
+	public String getTagName() {
 		return tagName;
 	}
 	
