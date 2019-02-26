@@ -14,7 +14,7 @@
     <div class="wrapper">
         <div class="header">
             <ul>
-                    <li class="header__logo"><a href="/"><img class="header__logo__png" src="../media/vicuriouslogo.png"></a></li>
+                <li class="header__logo"><a href="/"><img class="header__logo__png" src="../media/vicuriouslogo.png"></a></li>
             </ul>
             <ul>
                 <input class="header__search__box" type="search" value="What experience are you looking for...?">
@@ -22,7 +22,7 @@
             </ul>
             <ul class="header__buttons">
                 <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
-                <a href="/home"><li class="header__login__button">Login</li></a>
+                <a href><li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login</li></a>
             </ul>
         </div>
         <!--box header-->
@@ -50,13 +50,6 @@
         </div>
         <!--box review-->
         <div class="box review2">
-            <div>
-                <ul>
-                    <li th:each="review : ${reviews}">
-                        <span th:text="|${review.title}: ${review.content}|">Default Value</span>>
-                    </li>
-                </ul>
-            </div>
             <h2 class="review2__header">Review 2</h2>
             <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident
                 officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi
