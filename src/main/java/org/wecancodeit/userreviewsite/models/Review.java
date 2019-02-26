@@ -23,7 +23,7 @@ public class Review {
 	private Category category;
 	//Not entirely sure this is how it should be done
 	//one review can have many comments
-	@OneToMany(mappedBy="review")
+	//@OneToMany(mappedBy="review")
 	
 	private Collection<Comment> comments;
 	

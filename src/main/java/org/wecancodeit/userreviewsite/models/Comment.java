@@ -11,7 +11,7 @@ public class Comment {
 	@GeneratedValue
 	private Long id;
 	private String commentContent;
-	@ManyToOne
+	//@ManyToOne
 	private Review reviewToComment;
 	private String userName;
 	
