@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -18,15 +20,15 @@ public class Review {
 	private int rating;
 	private String imageURL;
 	private String author;
+	@Lob
 	private String content;
 	@ManyToOne
 	private Category category;
-	//Not entirely sure this is how it should be done
-	//one review can have many comments
-	//@OneToMany(mappedBy="review")
-	
+
+	@ManyToMany
+	private Collection<ReviewTag> reviewTags;
+	@OneToMany(mappedBy="review")
 	private Collection<Comment> comments;
-	
 
 	// default constructor
 	public Review() {
@@ -68,20 +70,22 @@ public class Review {
 	public Category getCategory() {
 		return category;
 	}
+  
+	public Collection<ReviewTag> getReviewTags() {
+		return reviewTags;
+	}
+  
+  	public Collection<Comment> getComments() {
+		return comments;
+	}
 
 	public void edit(String newReview) {
 		this.content = newReview;
 	}
-	public Collection<Comment> getComment() {
-		return comments;
-	}
-
+  
 	@Override
 	public String toString() {
 		return "Title: " + this.getTitle() + "; Rating (out of five): " + this.getRating() + "; User: "
 				+ this.getAuthor() + "; Category: " + this.getCategory().getType() + "; Review:" + this.getContent();
-
-	}
-
-	
+  }
 }

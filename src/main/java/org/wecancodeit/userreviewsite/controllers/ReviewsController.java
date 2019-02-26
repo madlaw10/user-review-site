@@ -24,7 +24,8 @@ public class ReviewsController {
 	CategoryRepository categoryRepo;
 
 	@GetMapping("/add")
-	public String getReviewForm() {
+	public String getReviewForm(String tag, Model model) {
+		model.addAttribute("categories", categoryRepo.findAll());
 		return "reviews-add";
 	}
 
@@ -43,5 +44,6 @@ public class ReviewsController {
 		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
 		return "reviews-verify";
 	}
+	
 
 }

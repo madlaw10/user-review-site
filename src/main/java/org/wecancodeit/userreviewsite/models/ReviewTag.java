@@ -2,47 +2,47 @@ package org.wecancodeit.userreviewsite.models;
 
 import java.util.Collection;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+
 
 @Entity
-public class Category {
+public class ReviewTag {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String type;
-
-	@OneToMany(mappedBy="category")
+	private String tagName;
+	
+	@ManyToMany(mappedBy="reviewTags")
 	private Collection<Review> reviews;
 	
-	// Default constructor
-	public Category() {
-	}
-
-	public Category(String type) {
-		this.type = type; 
+	
+	public ReviewTag() {}
+	
+	public ReviewTag(String tagName){
+		this.tagName = tagName;
+			
 	}
 
 	public Long getId() {
 		return id;
 	}
-	
-	public String getType() {
-		return type;
-	}
 
+	public String getTagName() {
+		return tagName;
+	}
+	
 	public Collection<Review> getReviews() {
 		return reviews;
 	}
 	
-	public String toString() {
-		return this.getType() + " " + this.getReviews();
-
-		
-	}
-
 }
+
+
+
+
+
+
