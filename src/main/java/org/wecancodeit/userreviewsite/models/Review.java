@@ -1,9 +1,12 @@
 package org.wecancodeit.userreviewsite.models;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Review {
@@ -18,6 +21,12 @@ public class Review {
 	private String content;
 	@ManyToOne
 	private Category category;
+	//Not entirely sure this is how it should be done
+	//one review can have many comments
+	@OneToMany(mappedBy="review")
+	
+	private Collection<Comment> comments;
+	
 
 	// default constructor
 	public Review() {
@@ -63,6 +72,9 @@ public class Review {
 	public void edit(String newReview) {
 		this.content = newReview;
 	}
+	public Collection<Comment> getComment() {
+		return comments;
+	}
 
 	@Override
 	public String toString() {
@@ -70,4 +82,6 @@ public class Review {
 				+ this.getAuthor() + "; Category: " + this.getCategory().getType() + "; Review:" + this.getContent();
 
 	}
+
+	
 }
