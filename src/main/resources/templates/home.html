@@ -10,82 +10,48 @@
 </head>
 
 <body>
-
     <div class="wrapper">
-        <div class="header">
+        <header>
             <ul>
                 <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
-
             </ul>
             <ul class="header__buttons">
                 <a href="reviews/add">
                     <li class="header__review__button">Write Review</li>
                 </a>
-                <li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login
-                </li></a>
+                <a href="">
+                    <li class="header__login__button">Login</li>
+                </a>
             </ul>
-            <div id="id01" class="modal">
+        </header>
 
-                <form class="modal-content animate" action="cnn.com">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
-                            title="Close Modal">&times;</span>
-                        <img src="../media/vicuriouslogo.png">
-                    </div>
-
-                    <div class="container">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-                        <a href="/home/">Forgot Password?</a>
-
-                        <button type="submit">Login</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <script>
-                // Get the modal
-                var modal = document.getElementById('id01');
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            </script>
-        </div>
-        <!--box header-->
         <div class="box content">
-            <h1 class="content__header"><span class="content__live">live</span><span
-                    class="content__vicuriously"></span>vi∙curiously</h1>
+            <h1><img class="content__header" src="../media/vicuriouslogo-white.png" alt="Live Vicuriously"></h1>
             <input class="content__search__box" type="search" value="What experience are you looking for...?">
             <input class="content__search__button" type="submit" value="Search">
         </div>
         <!--box content-->
+
         <div class="box sidebar">
             <h2 class="sidebar__header">Categories</h2>
             <p class="sidebar__content">
                 Browse Experiences by Category
                 <ul class="sidebar__content__ul">
                     <li th:each="category : ${categories}">
-                        <a th:text="${category.type}" th:href="@{${category.type}}">Default Category</a>
+                        <a th:text="${category.type}" href="@{|${category.type}|}">Default Category</a>
                     </li>
                 </ul>
             </p>
         </div>
         <!--box sidebar-->
+
         <div class="box sidebar2">
             <h2 class="sidebar__header">Featured</h2>
             <p class="sidebar__content">Check out this week's featured experience!</p>
             <p class="sidebar__content"><a href="experience">Sample Experience</a></p>
         </div>
-        <!--box sidebar2--> 
+        <!--box sidebar2-->
+
         <div class="box sidebar3">
             <h2 class="sidebar__header">Top Experiences</h2>
             <p class="sidebar__content">Below are the top 5 experiences based on user ratings:
@@ -99,10 +65,10 @@
             </p>
         </div>
         <!--box sidebar3-->
-        <div class="box footer">
-            <footer>Team 3, 2019.</footer>
-        </div>
-        <!--box footer-->
+            <div class="box footer">
+                <footer>Team 3, 2019.</footer>
+            </div>
+            <!--box footer-->
     </div>
 </body>
 
