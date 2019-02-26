@@ -34,7 +34,7 @@
             Browse Experiences by Category
             <ul class="sidebar__content__ul">
                 <li th:each="category : ${categories}">
-                    <a th:text="${category.tag}" href="@{|${category.tag}|}">Default Category</a>
+                    <a th:text="${category.type}" href="@{|${category.type}|}">Default Category</a>
                 </li>
             </ul>
         </p>
@@ -43,7 +43,7 @@
     <div class="box sidebar2">
         <h2 class="sidebar__header">Featured</h2>
         <p class="sidebar__content">Check out this week's featured experience!</p>
-        <p class="sidebar__content"><a href="reviews">Sample Experience</a></p>
+        <p class="sidebar__content"><a href="experience">Sample Experience</a></p>
     </div><!--box sidebar2-->
 
     <div class="box sidebar3">
