@@ -18,7 +18,7 @@ public class Category {
 
 	@OneToMany(mappedBy="category")
 	private Collection<Review> reviews;
-
+	
 	// Default constructor
 	public Category() {
 	}

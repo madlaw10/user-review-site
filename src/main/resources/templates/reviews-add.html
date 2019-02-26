@@ -1,111 +1,100 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-        <link rel="stylesheet" href="/css/layout-data-entry.css">
-        <title>Write a Review</title>
-    </head>
+    <link rel="stylesheet" href="/css/layout-data-entry.css">
+    <title>Write a Review</title>
+</head>
 
 <body>
 
-      <div class="wrapper">
-          <div class="header">
-              <ul>
-                <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
-              </ul>
-              <ul>
-                <input class="header__search__box" type="search" value="What experience are you looking for...?">
-                <input class="header__search__button" type="submit" value="Search">
-              </ul>
-              <ul class="header__buttons">
-              <a href="writeareview"><li class="header__review__button">Write Review</li></a>
-              <a href><li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login</li></a>
-              </ul>
-          </div>
-    
-             <div class="reviewform">
-                  <h2 class="review__header">
-                    Write your review!
-                  </h2>
-                    
+  <div class="wrapper">
+      <div class="header">
+          <ul>
+            <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
+          </ul>
+          <ul>
+            <input class="header__search__box" type="search" value="What experience are you looking for...?">
+            <input class="header__search__button" type="submit" value="Search">
+          </ul>
+          <ul class="header__buttons">
+          <a href="writeareview"><li class="header__review__button">Write Review</li></a>
+          <a href><li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login</li></a>
+          </ul>
+      </div>
 
-    <form action="/reviews/add" method="POST" class="reviewboxes">
-       
-        <h2>***review topic will carry over from prior page, either a new topic or a selected topic***</h2>
-        <h4>Headline</h4>
-        <input type="text" class="headline" id="headline" name="title" placeholder="Write a headline for this review" maxlength="100" style="width: 500px;"></input>
-        <h4>Review</h4>
-        <textarea class="reviewbox" id="reviewbox" name="content" placeholder="Please write your review here." maxlength="5000" style="width: 500px; height: 500px;"></textarea>
-        <h4>Author</h4>
-        <textarea class="summary" name="author" placeholder="Share a brief summary of why you chose this star rating." maxlength="1000" style="width: 500px; height: 100px;"></textarea>
-        <h4>Add a photo</h4>
-        <input type="file" name="imageURL" id="files"/>
-        <output id="list"></output>
-            <script>
-                if (window.FileReader) {
-                  function handleFileSelect(evt) {
-                    var files = evt.target.files;
-                    var f = files[0];
-                    var reader = new FileReader();
-
-                    
-                        reader.onload = (function(theFile) {
-                        return function(e) {
-                          document.getElementById('list').innerHTML = ['<img src="', e.target.result,'" title="', theFile.name, '" width="50"/>'].join('');
-                             };
-                            })(f);
-                
-                          reader.readAsDataURL(f);
-                            }
-                           } else {
-                           alert('This browser does not support FileReader');
-                             }
+         <div class="reviewform">
+              <h2 class="review__header">
+                Write your review!
+              </h2>
                 
 
-                      
-
-                  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-                </script>   
-        <h4>Rating</h4>
-        <p>How many stars would you rank this experience? 1-5</p>
-        <div class="rate">
-          <input type="radio" id="star5" name="rank" value="5" />
-          <label for="star5" title="text">★</label>
-          <input type="radio" id="star4" name="rank" value="4" />
-          <label for="star4" title="text">★</label>
-          <input type="radio" id="star3" name="rank" value="3" />
-          <label for="star3" title="text">★</label>
-          <input type="radio" id="star2" name="rank" value="2" />
-          <label for="star2" title="text">★</label>
-          <input type="radio" id="star1" name="rank" value="1" />
-          <label for="star1" title="text">★</label>
-        </div>
-        <!--need below to prevent errors-->
-        <h4>Rating</h4>
-        <p>How many stars would you rank this experience? 1-5</p>
-        <input class="rank" name="rating" type="number"style="width: 50px"></input>
-
-    
-    
+<form action="/reviews/add" method="POST" class="reviewboxes">
    
-        
-        <!-- <h4>Rating Summary</h4>
-        <textarea class="summary" name="summary" placeholder="Share a brief summary of why you chose this star rating." maxlength="1000" style="width: 500px; height: 100px;"></textarea> -->
+    <h4>Select Category</h4>
+    <div class="drop_down_menu" th:object="${category}">
+        <select class="form-control" id="dropOperator" name="category">
+        <option value="0">Select Category</option>
+        <option th:each="category : ${categories}" 
+                th:value="${category}"
+                th:text="${category}">other option</option>
+        </select>
+    </div>
+ 
+    <h4>Headline</h4>
+    <input type="text" class="headline" id="headline" name="title" placeholder="Write a headline for this review" maxlength="100" style="width: 500px;"></input>
+    <h4>Review</h4>
+    <textarea class="reviewbox" id="reviewbox" name="content" placeholder="Please write your review here." maxlength="5000" style="width: 500px; height: 500px;"></textarea>
+    <h4>Author</h4>
+    <input type="author" class="summary" name="author" placeholder="Share a brief summary of why you chose this star rating." maxlength="100" style="width: 500px; "></textarea>
+    <h4>Add a photo - copy and paste URL below.</h4>
+    <input type="textbox" name="imageURL" id="files" style="width: 500px"/>
+    
+    <h4>Rating</h4>
+    <p>How many stars would you rank this experience? 1-5</p>
+    <div class="rate">
+      <input type="radio" id="star5" name="rating" value="5" />
+      <label for="star5" title="text">★</label>
+      <input type="radio" id="star4" name="rating" value="4" />
+      <label for="star4" title="text">★</label>
+      <input type="radio" id="star3" name="rating" value="3" />
+      <label for="star3" title="text">★</label>
+      <input type="radio" id="star2" name="rating" value="2" />
+      <label for="star2" title="text">★</label>
+      <input type="radio" id="star1" name="rating" value="1" />
+      <label for="star1" title="text">★</label>
+    </div>
+    <!--need below to prevent errors-->
+   
 
+<<<<<<< HEAD
         <h4>Tags</h4>
         <input type="text" class="tags" id="tags" name="type" placeholder="Include any tags to help other users" style="width: 500px;"/>
         <input type="submit" name="submit" value="submit" style="width: 200px;"/>
     </form>
+=======
+>>>>>>> review-page-touchup
 
-      </div>
 
-      
-    </div>
+
+    
+    <!-- <h4>Rating Summary</h4>
+    <textarea class="summary" name="summary" placeholder="Share a brief summary of why you chose this star rating." maxlength="1000" style="width: 500px; height: 100px;"></textarea> -->
+
+    <h4>Tags</h4>
+    <input type="text" class="tags" id="tags" name="tag" placeholder="Include any tags to help other users" style="width: 500px;"/>
+    <input type="submit" name="submit" value="submit" style="width: 200px;"/>
+</form>
+
+  </div>
+
+  
+</div>
 
 
 
