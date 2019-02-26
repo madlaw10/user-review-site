@@ -1,8 +1,11 @@
 package org.wecancodeit.userreviewsite.models;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,9 +19,13 @@ public class Review {
 	private String imageURL;
 	private String author;
 	private String content;
+	
 	@ManyToOne
 	private Category category;
-
+	@ManyToMany(mappedBy="reviews")
+	private Collection<ReviewTag> reviewTags;
+	
+	
 	// default constructor
 	public Review() {
 	}
@@ -58,6 +65,9 @@ public class Review {
 	
 	public Category getCategory() {
 		return category;
+	}
+	public Collection<ReviewTag> getReviewTags() {
+		return reviewTags;
 	}
 
 	public void edit(String newReview) {
