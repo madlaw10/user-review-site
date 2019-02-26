@@ -2,7 +2,6 @@
   margin:0;
   font-family: sans-serif;
   padding:0;
-
 } 
 
 body {
@@ -44,7 +43,6 @@ color: black;
 
 .footer {
     grid-area: footer;
-  
 }
 
 .wrapper {
@@ -76,32 +74,20 @@ background-size: cover;
 font-size: 300%;
 margin: 0;
 text-align: center;
-height: auto;
 width: 100%;
 min-height: 25rem;
 text-shadow: 1px 1px 1px black;
+padding: 2rem;
 }
 
 .content h1 {
 font-style: italic;
 margin-top: 10rem;
-margin-bottom: 1rem;
 }
 
 .content__experience__image {
 height: 4rem;
 width: 4rem;
-}
-
-.content__live {
-font-family: Brush Script MT, Brush Script Std, cusrive;
-vertical-align: 4rem;
-font-size: 3rem;
-font-style: italic;
-font-weight: normal;
-padding-right: 1rem; 
-text-align: center;
-text-shadow: 1px 1px 1px black;
 }
 
 .content__header {
@@ -113,7 +99,7 @@ max-width: auto;
 .content__search__box {
 border-radius: 360px;
 border-color: transparent;
- box-shadow: 1px 1px 1px black;
+box-shadow: 1px 1px 1px black;
 color: darkgray;
 font-style: italic;
 height: 2rem;
