@@ -3,6 +3,7 @@ package org.wecancodeit.userreviewsite.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -15,6 +16,7 @@ public class Review {
 	private int rating;
 	private String imageURL;
 	private String author;
+	@Lob
 	private String content;
 	@ManyToOne
 	private Category category;
