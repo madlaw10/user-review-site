@@ -7,6 +7,6 @@ import org.wecancodeit.userreviewsite.models.Category;
 @Repository
 public interface CategoryRepository extends CrudRepository<Category, Long> {
 
-	Category findCategoryByTag(String tag);
+	Category findCategoryByType(String type);
 
 }

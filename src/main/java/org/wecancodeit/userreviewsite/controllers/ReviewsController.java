@@ -29,10 +29,10 @@ public class ReviewsController {
 	}
 
 	@PostMapping("/add")
-	public String addReview(String title, int rating, String imageURL, String author, String content, String tag) {
-		Category category = categoryRepo.findCategoryByTag(tag);
+	public String addReview(String title, int rating, String imageURL, String author, String content, String type) {
+		Category category = categoryRepo.findCategoryByType(type);
 		if (category == null) {
-			category = categoryRepo.save(new Category(tag));
+			category = categoryRepo.save(new Category(type));
 		} 
 		reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
 		return "redirect:/reviews/" + title;
