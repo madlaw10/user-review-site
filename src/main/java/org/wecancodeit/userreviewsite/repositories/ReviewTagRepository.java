@@ -1,10 +1,10 @@
 package org.wecancodeit.userreviewsite.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.wecancodeit.userreviewsite.models.ReviewTags;
+import org.wecancodeit.userreviewsite.models.ReviewTag;
 
-public interface ReviewTagRepository extends CrudRepository<ReviewTags, Long> {
+public interface ReviewTagRepository extends CrudRepository<ReviewTag, Long> {
 	
-	ReviewTags findReviewTagsByTagsName(String tagsname);
+	ReviewTag findReviewTagsByTagsName(String tagsname);
 
 }
