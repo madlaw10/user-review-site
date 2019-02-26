@@ -38,11 +38,11 @@
    
     <h4>Select Category</h4>
     <div class="drop_down_menu" th:object="${category}">
-        <select class="form-control" id="dropOperator" name="category">
+        <select class="form-control" id="dropOperator" name="type">
         <option value="0">Select Category</option>
         <option th:each="category : ${categories}" 
-                th:value="${category}"
-                th:text="${category}">other option</option>
+                th:value="${category.type}"
+                th:text="${category.type}">other option</option>
         </select>
     </div>
  
@@ -72,8 +72,8 @@
     <!--need below to prevent errors-->
     
         <h4>Tags</h4>
-        <input type="text" class="tags" id="tags" name="type" placeholder="Include any tags to help other users" style="width: 500px;"/>
-        <input type="submit" name="submit" value="submit" style="width: 200px;"/>
+        <!-- <input type="text" class="tags" id="tags" name="type" placeholder="Include any tags to help other users" style="width: 500px;"/>-->
+        <input type="submit" name="submit" value="submit" style="width: 200px;"/> 
     </form>
 
 
