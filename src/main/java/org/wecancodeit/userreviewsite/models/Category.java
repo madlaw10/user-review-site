@@ -39,7 +39,8 @@ public class Category {
 	}
 	
 	public String toString() {
-		return type + this.getReviews();
+		return this.getType() + " " + this.getReviews();
+
 		
 	}
 

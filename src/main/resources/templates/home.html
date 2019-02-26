@@ -10,60 +10,66 @@
 </head>
 
 <body>
-    
-<div class="wrapper">
-    <header>
-        <ul>
-            <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
-        </ul>
-        <ul class="header__buttons">
-            <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
-           <a href=""><li class="header__login__button">Login</li></a>
-        </ul>
-    </header>
-    
-    <div class="box content">
-        <h1><img class="content__header" src="../media/vicuriouslogo-white.png" alt="Live Vicuriously"></h1>
-        <input class="content__search__box" type="search" value="What experience are you looking for...?">
-        <input class="content__search__button" type="submit" value="Search">
-    </div><!--box content-->
-
-    <div class="box sidebar">
-        <h2 class="sidebar__header">Categories</h2>
-        <p class="sidebar__content">
-            Browse Experiences by Category
-            <ul class="sidebar__content__ul">
-                <li th:each="category : ${categories}">
-                    <a th:text="${category.type}" href="@{|${category.type}|}">Default Category</a>
-                </li>
+    <div class="wrapper">
+        <header>
+            <ul>
+                <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
             </ul>
-        </p>
-    </div><!--box sidebar-->
-
-    <div class="box sidebar2">
-        <h2 class="sidebar__header">Featured</h2>
-        <p class="sidebar__content">Check out this week's featured experience!</p>
-        <p class="sidebar__content"><a href="experience">Sample Experience</a></p>
-    </div><!--box sidebar2-->
-
-    <div class="box sidebar3">
-        <h2 class="sidebar__header">Top Experiences</h2>
-        <p class="sidebar__content">Below are the top 5 experiences based on user ratings:
-            <ul class="sidebar__content__ul">
-                <li class="sidebar__content__li">Getting a root canal</li>
-                <li class="sidebar__content__li">Driving in rush hour traffic in downtown LA</li>
-                <li class="sidebar__content__li">Falling down icy steps</li>
-                <li class="sidebar__content__li">Divorce</li>
-                <li class="sidebar__content__li">Getting in a fist fight</li>
+            <ul class="header__buttons">
+                <a href="reviews/add">
+                    <li class="header__review__button">Write Review</li>
+                </a>
+                <a href="">
+                    <li class="header__login__button">Login</li>
+                </a>
             </ul>
-        </p>
-    </div><!--box sidebar3-->
+        </header>
 
-    <div class="box footer">
-        <footer>Team 3, 2019.</footer>
+        <div class="box content">
+            <h1><img class="content__header" src="../media/vicuriouslogo-white.png" alt="Live Vicuriously"></h1>
+            <input class="content__search__box" type="search" value="What experience are you looking for...?">
+            <input class="content__search__button" type="submit" value="Search">
+        </div>
+        <!--box content-->
+
+        <div class="box sidebar">
+            <h2 class="sidebar__header">Categories</h2>
+            <p class="sidebar__content">
+                Browse Experiences by Category
+                <ul class="sidebar__content__ul">
+                    <li th:each="category : ${categories}">
+                        <a th:text="${category.type}" href="@{|${category.type}|}">Default Category</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <!--box sidebar-->
+
+        <div class="box sidebar2">
+            <h2 class="sidebar__header">Featured</h2>
+            <p class="sidebar__content">Check out this week's featured experience!</p>
+            <p class="sidebar__content"><a href="experience">Sample Experience</a></p>
+        </div>
+        <!--box sidebar2-->
+
+        <div class="box sidebar3">
+            <h2 class="sidebar__header">Top Experiences</h2>
+            <p class="sidebar__content">Below are the top 5 experiences based on user ratings:
+                <ul class="sidebar__content__ul">
+                    <li class="sidebar__content__li">Getting a root canal</li>
+                    <li class="sidebar__content__li">Driving in rush hour traffic in downtown LA</li>
+                    <li class="sidebar__content__li">Falling down icy steps</li>
+                    <li class="sidebar__content__li">Divorce</li>
+                    <li class="sidebar__content__li">Getting in a fist fight</li>
+                </ul>
+            </p>
+        </div>
+        <!--box sidebar3-->
+            <div class="box footer">
+                <footer>Team 3, 2019.</footer>
+            </div>
+            <!--box footer-->
     </div>
-    <!--box footer-->
-</div>
 </body>
 
 </html>
