@@ -38,7 +38,7 @@
                 Browse Experiences by Category
                 <ul class="sidebar__content__ul">
                     <li th:each="category : ${categories}">
-                        <a th:text="${category.type}" href="@{|${category.type}|}">Default Category</a>
+                        <a th:text="${category.type}" th:href="@{|${category.type}|}">Default Category</a>
                     </li>
                 </ul>
             </p>
