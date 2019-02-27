@@ -42,7 +42,6 @@ header {
     color: #444;
 }
 
-
 .wrapper {
   background-color: #EDEAE5;
   display: grid;
@@ -58,29 +57,29 @@ header {
   " footer footer footer "
 }
 
-    /* @media only screen and (min-width: 500px)  {
-    .wrapper {
+@media only screen and (max-width: 900px)   {
+  .wrapper {
+    background-color: #EDEAE5;
+    color: #444;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "content"
+    "review"
+    "review2"
+    "review3"
+    "footer"
+  }
 
-        grid-template-columns: 20% auto;
-        grid-template-areas:
-    "header   header"
-        "review  content"
-        "review2 review2"
-        "footer   footer";
-    }
-    }
+  .header__logo__png {
+    height: 2rem;
+    width: auto;
+  }
 
-    @media only screen and (min-width: 600px)   {
-        .wrapper {
-      grid-gap: 20px;
-            grid-template-columns: 120px auto 120px;
-            grid-template-areas:
-      "header  header  header"
-            "review content review2"
-            "footer  footer  footer";
-            max-width: 600px;
-        }
-    } */
+  .header__search__box {
+    width: 10rem;
+  }
+}
 
 .box {
   background-color: #444;
@@ -97,7 +96,6 @@ header {
   grid-template-columns: repeat(2, 1fr);
   min-height: 30rem;
   margin-top: 4.9rem;
-  
 }
 
 .content__experience__description {
