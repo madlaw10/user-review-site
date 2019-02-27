@@ -24,8 +24,7 @@ public class Review {
 	private String content;
 	@ManyToOne
 	private Category category;
-
-	@ManyToMany
+	@ManyToMany(mappedBy="reviews")
 	private Collection<ReviewTag> reviewTags;
 	@OneToMany(mappedBy="review")
 	private Collection<Comment> comments;

@@ -39,7 +39,7 @@ public class ReviewsController {
 		return "redirect:/reviews/" + title;
 	}
 
-	@GetMapping("/{title}")
+	@GetMapping("/{title}") // need to find by the ID instead, otherwise it gives error
 	public String getReview(@PathVariable String title, Model model) {
 		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
 		return "reviews-verify";
