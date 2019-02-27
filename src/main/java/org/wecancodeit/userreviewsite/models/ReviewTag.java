@@ -1,5 +1,6 @@
 package org.wecancodeit.userreviewsite.models;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -16,14 +17,15 @@ public class ReviewTag {
 	private Long id;
 	private String tagName;
 	
-	@ManyToMany(mappedBy="reviewTags")
+	@ManyToMany
 	private Collection<Review> reviews;
 	
 	
 	public ReviewTag() {}
 	
-	public ReviewTag(String tagName){
+	public ReviewTag(String tagName, Review ...reviews){
 		this.tagName = tagName;
+		this.reviews = Arrays.asList(reviews);
 			
 	}
 
