@@ -57,6 +57,21 @@ color: black;
   "footer footer footer footer footer"
 }
 
+@media only screen and (max-width: 900px)   {
+  .wrapper {
+    background-color: #EDEAE5;
+    color: #444;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "content"
+    "sidebar"
+    "sidebar2"
+    "sidebar3"
+    "footer"
+  }
+}
+
 .box {
 background-color: #444;
 color: #fff;
@@ -212,6 +227,7 @@ padding-right: 2rem;
 padding-top: 0.5rem;
 padding-bottom: 0.5rem;
 text-decoration: none;
+width: 100px;
 }
 
 .header__review__button:hover {
