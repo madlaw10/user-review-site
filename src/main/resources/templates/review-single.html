@@ -4,54 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/single-review-style.css">
 
   
     <!-- ?\<link rel="stylesheet" href="C:\Users\WeCanCodeIT\wcci\code\user-review-site\src\main\resources\static\css\style-review-single.css"> -->
     <title>Single Review</title>
 </head>
+
+<div class="wrapper">
 <div class="header">
         <ul>
             <li class="header__logo">vicuriously.com<span class="header__logo__tm">™</span></li>
             
         </ul>
         <ul class="header__buttons">
+                <a href="/"><li class="header__home__button">Home</li></a>
             <a href="review/add"><li class="header__review__button">Write Review</li></a>
             <li class="header__login__button"><a>Login</a></li>
+           
         </ul>
     </div><!--box header-->
 <body>
+    <section class= "main__body">
     <div class= "title">
         <h1 th:text="${review.title}">Default Title</h1>
+        <h2 th:text="${review.category.type}">Default Category</h2>
+
     </div>
 
     <div class= "review__rating">
             <h2 th:text="${review.rating}">Default Rating</h2>
      </div><!--closes review__rating div-->
 
+    <section class="main__review">
      <div class= "review__img">
-            <h2 th:text="${review.imageUrl}">Default Image</h2>
+         <figure>
+            <img th:src= "@{|${review.imageURL}|}"></img>
+        </figure>       
      </div><!--closes review__rating div-->
 
 
     <div class = "review__content">
-        <h2 th:text="${review.content}">Default Review Content</h2>
-    </div><!--closes review__content div-->
+        <h3 th:text="${review.content}">Default Review Content</h3>
+        <h4 th:text="${review.author}">Default Author</h4></p>
+    </div><!--closes review__content-->
+        
+      
+    <!-- <div class = "review__author"> 
+            <h4 th:text="${review.author}">Default Author</h4>
+    </div>  -->
+</section> <!--closes main__review section-->
 
-    <div class = "review__author">
-            <h2 th:text="${review.author}">Default Author</h2>
-    </div><!--closes review__author div-->
 
-
-
-    <!--add tags too-->
-    <div class = "review__tags">
-            <h2 th:text="${review.tag}">Default Tags</h2>
-    </div><!--closes review__author div-->
+    <!--add tags too CURRENTLY NOT WORKING WITH "review.reviewTags-->
+     <div class = "review__tags">
+            <h3 th:text="${review.reviewTags}">Default Tags</h3>
+    </div>
 
 
 
     <div class = "review__comments">
-            <h2 th:text="${review.comment}">Default Comments</h2>
+           <h3 th:text="${review.comments}">Default Comments</h3>
     </div><!--closes review__author div-->
 
 
@@ -60,13 +73,15 @@
     <!-- Need an area to add comment -->
 
             <div class = "add__comment"> 
-                    <textarea class="commentbox" id="commentbox" name="content" placeholder="Please write your comment here." maxlength="5000" style="width: 500px; height: 300px;"></textarea> 
+                    <textarea class="commentbox" id="commentbox" name="content" placeholder="Please write your comment here." maxlength="5000" style="width: 500px; height: 220px;"></textarea> 
              
            </div>  <!-- closes add_comment -->
+           <nav class= "add__button">
+           <a href="/review/${review.title}">Add Comment</a>
+           </nav>
 
-    
-
-  
+        </div><!--closes wrapper-->
+    </section><!--closes main body-->
 </body>
 <div class="box footer">
         <footer>Team 3, 2019.</footer>
