@@ -1,21 +1,83 @@
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
+    <link rel="stylesheet" href="/css/layout-data-verify.css">
+    <title>Vi-curiously - Review Submitted</title>
 </head>
-    <body>
-      <p id="write"></p>
 
-      <h3 th:text="${review}">Default Review</h3>
+<body>
+
+  <div class="wrapper">
+      <div class="header">
+          <ul>
+            <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
+          </ul>
+          <ul>
+            <input class="header__search__box" type="search" value="What experience are you looking for...?">
+            <input class="header__search__button" type="submit" value="Search">
+          </ul>
+          <ul class="header__buttons">
+          <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
+          <a href><li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login</li></a>
+          </ul>
+      </div>
+
+         <div class="reviewform">
+              <h2 class="review__header" >
+                  Thanks for posting!
+              </h2>
+                
+
+            <div class="reviewboxes">
+   
+                    <h4>Posted in</h4>
+                    <h5 th:text="${review.category.type}"></h5>
     
-      
-      <script>
-          
-          document.getElementById("write").innerHTML = window.location.search;
-      
-      
-      </script>
+ 
+                    <h4>Headline</h4>
+                    <h5 th:text="${review.title}"></h5>
+                    <h4>Review</h4>
+                    <h5 th:text="${review.content}"></h5>
+                    <h4>Author</h4>
+                    <h5 th:text="${review.author}"></h5>
+                    <h4>Attached Photo</h4>
+                    <h5>Put Photo here</h5>
+    
+                    <h4>Rating</h4>
+                    <h5 th:text="${review.rating}"></h5>
+                    <!--need below to prevent errors-->
+    
+                     <h4>Tags</h4>
+                    <h5>we be tagging things... one day.</h5>
+         
 
+            </div>
+            <div class="similarreviews">
+                <h4>Check out reviews on similar experiences:</h4>
+                <!-- <h5 th:each="review : ${category}"></h5>
+                <h5 th:text="${review.title}"></h5>
+                <h5 th:text="${review.rating}"></h5> -->
 
-      </body>
-      </html>
+                <!-- <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title}"></h5> -->
+                <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title + ' ' + review.rating}"></h5>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+         </div>
+
+</div>
+
+</body>
+
+</html>
