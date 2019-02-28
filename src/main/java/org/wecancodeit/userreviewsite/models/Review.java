@@ -40,6 +40,7 @@ public class Review {
 		this.author = author;
 		this.content = content;
 		this.category = category;
+		
 	}
 
 	public Long getId() {
