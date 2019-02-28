@@ -1,4 +1,15 @@
-
+body {
+   background-image: url(../media/vicuriouslogo-white.png);
+    background-attachment: fixed;
+    background-position: left;
+    background-size: 0px;
+  }
+ .reviews-all {
+    font-size : 40px;
+	 font-style:italic;
+	 text-align: left;
+   line-height : 1.1em;
+ }
  body {
   margin: 40px;
 }
@@ -9,15 +20,13 @@
   grid-template-columns: 200px 200px 200px 200px 200px;
   text-align :center;
   background-color: #fff;
-  color:azure;
+  color: #444;
 }
 
-.review{
-  background-color:aliceblue;
+.box {
+  background-color: #444;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
 }
-
- 
