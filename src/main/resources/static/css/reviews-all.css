@@ -1,0 +1,16 @@
+body {
+   
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ .reviews-all {
+    font-size : 40px;
+	 font-style:italic;
+	 text-align: center;
+	 line-height : 1.1em;
+	
+ }
+  
