@@ -1,16 +1,23 @@
-body {
-   
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
- .reviews-all {
-    font-size : 40px;
-	 font-style:italic;
-	 text-align: center;
-	 line-height : 1.1em;
-	
- }
-  
+
+ body {
+  margin: 40px;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  text-align :center;
+  background-color: #fff;
+  color:azure;
+}
+
+.review{
+  background-color:aliceblue;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+ 
+ 

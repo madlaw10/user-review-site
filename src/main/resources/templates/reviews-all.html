@@ -11,20 +11,18 @@
 
 <body>
     <div class="wrapper">
-         <ul>
-            <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
-        </ul>
-        <h2 class="reviews-all"> All types of Reviews!</h2>
+        <img class="header__logo" src="../media/vicuriouslogo.png">
+        
+        <h2 class="reviews-all"> All Reviews</h2>
 
-            <h4 class="review-title" th:text="${title}">Review title</h4>
-            <h4 class="review-category" th:text="${category}">Review category</h4>
-            <h4 class="review-rating" th:text="${rating}">Review rating</h4>
-            <h4 class="review-content" th:text="${content}">Review content</h4>
+            <h4 class="review title" th:text="${title}"> Title</h4>
+            <h4 class="review category" th:text="${category}">Category</h4>
+            <h4 class="review content" th:text="${content}">Content</h4>
+            <h4 class="review rating" th:text="${rating}"> Rating</h4>
+            <h4 class="review date" th:text="${date}"> Date</h4>
 </div>
+
 </body>
-
-
-
 
 
 </html>
