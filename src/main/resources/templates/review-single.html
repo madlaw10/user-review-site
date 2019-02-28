@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+    <!-- ?\<link rel="stylesheet" href="C:\Users\WeCanCodeIT\wcci\code\user-review-site\src\main\resources\static\css\style-review-single.css"> -->
+    <title>Single Review</title>
+</head>
+<div class="header">
+        <ul>
+            <li class="header__logo">vicuriously.com<span class="header__logo__tm">™</span></li>
+            
+        </ul>
+        <ul class="header__buttons">
+            <a href="review/add"><li class="header__review__button">Write Review</li></a>
+            <li class="header__login__button"><a>Login</a></li>
+        </ul>
+    </div><!--box header-->
+<body>
+    <div class= "title">
+        <h1 th:text="${review.title}">Default Title</h1>
+    </div>
+
+    <div class= "review__rating">
+            <h2 th:text="${review.rating}">Default Rating</h2>
+     </div><!--closes review__rating div-->
+
+     <div class= "review__img">
+            <h2 th:text="${review.imageUrl}">Default Image</h2>
+     </div><!--closes review__rating div-->
+
+
+    <div class = "review__content">
+        <h2 th:text="${review.content}">Default Review Content</h2>
+    </div><!--closes review__content div-->
+
+    <div class = "review__author">
+            <h2 th:text="${review.author}">Default Author</h2>
+    </div><!--closes review__author div-->
+
+
+
+    <!--add tags too-->
+    <div class = "review__tags">
+            <h2 th:text="${review.tag}">Default Tags</h2>
+    </div><!--closes review__author div-->
+
+
+
+    <div class = "review__comments">
+            <h2 th:text="${review.comment}">Default Comments</h2>
+    </div><!--closes review__author div-->
+
+
+
+
+    <!-- Need an area to add comment -->
+
+            <div class = "add__comment"> 
+                    <textarea class="commentbox" id="commentbox" name="content" placeholder="Please write your comment here." maxlength="5000" style="width: 500px; height: 300px;"></textarea> 
+             
+           </div>  <!-- closes add_comment -->
+
+    
+
+  
+</body>
+<div class="box footer">
+        <footer>Team 3, 2019.</footer>
+    </div><!--box footer-->
+</html>
+

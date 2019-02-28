@@ -9,6 +9,8 @@ public interface ReviewRepository extends CrudRepository<Review, Long> {
 	
 	Review findReviewByTitle(String title);
 
+
 	Review findReviewByCategory(String category);
+
 
 }

@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/category-styling.css">
     <title>Categories</title>
 </head>
-<div class="header">
+<div class="wrapper">
+    <header>
         <ul>
-            <li class="header__logo">vicuriously.com<span class="header__logo__tm">™</span></li>
-            
+            <li class="header__logo"><a href="/"><img class="header__logo__png" src="../media/vicuriouslogo.png"></a>
+            </li>
+        </ul>
+        <ul>
+            <input class="header__search__box" type="search" value="What experience are you looking for...?">
+            <input class="header__search__button" type="submit" value="Search">
         </ul>
         <ul class="header__buttons">
-            <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
-            <li class="header__login__button"><a>Login</a></li>
+            <a href="reviews/add">
+                <li class="header__review__button">Write Review</li>
+            </a>
+            <a href>
+                <li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login
+                </li>
+            </a>
         </ul>
-    </div><!--box header-->
-<body>
-    <div class= "title">
-        <h1 th:text="${category}">Default Category</h1>
-    </div>
-  
-</body>
-<div class="box footer">
+    </header>
+    <!--box header-->
+
+    <body>
+        <div class="category">
+            <h1 class="category__title" th:text="${category.type}">Default Category</h1>
+        </div>
+        <div class="review" th:each="review : ${category.reviews}">
+            <h2 class="review__header">
+                <span class="review__header__title" th:text="${review.title}">Default Title</span>
+                <span class="review__header__rating" th:text="${review.rating}">Default Rating</span>
+            </h2>
+            <h3 class="review__author" th:text="${review.author}">Default User</h3>
+            <p class="review__content" th:text="${review.content}">Default Review</p>
+            <ul class="review__tags">
+                <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
+                    <span th:text="${reviewTag.tagName}">Default Tag</span>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+    <div class="box footer">
         <footer>Team 3, 2019.</footer>
-    </div><!--box footer-->
+    </div>
+    <!--box footer-->
+</div>
+<!--wrapper-->
+
 </html>
