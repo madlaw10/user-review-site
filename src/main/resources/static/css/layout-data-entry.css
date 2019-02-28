@@ -167,38 +167,10 @@ text-align: center;
 text-shadow: 1px 1px 1px black;
 }
 
-.content__vicuriously {
-text-align: center;
-}
-
-.content__search__box {
-border-radius: 360px;
-border-color: transparent;
-color: darkgray;
-font-style: italic;
-height: 2rem;
-padding-left: 1rem;
-width: 20rem;
-}
-
-.content__search__box:focus-within {
-color: black;
-font-style: normal;
-}
-
-.content__search__button {
-background-color: #fce181;
-border-radius: 360px;
-border-color: transparent;
-color: white;
-font-weight: bold;
-height: 2rem;
-width: 7rem;
-
 }
 
 .submit, .photo__submit{
-    background-color: #fce181;
+background-color: #fce181;
 border-radius: 360px;
 border-color: transparent;
 color: white;
@@ -242,8 +214,8 @@ display: flex;
 flex-direction: row;
 font-size: 2rem;
 font-weight: bold;
-justify-content: space-between;
 height: auto;
+justify-content: space-around;
 padding: 6px;
 position: fixed;
 width: 100%;
@@ -266,12 +238,13 @@ border-radius: 360px;
 .header__login__button {
 background-color: #026670;
 border-radius: 360px;
+box-shadow: 1px 1px 1px black;
 color: white;
 list-style-type: none;
-padding-left: 2rem;
-padding-right: 2rem;
-padding-top: 0.5rem;
-padding-bottom: 0.5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0.4rem;
+padding-bottom: 0.4rem;
 margin-left: 1rem;
 margin-right: 4rem;
 }
@@ -286,7 +259,8 @@ padding-right: 2rem;
 }
 
 .header__logo__png {
-    height: 4rem;
+    height: auto;
+    max-height: 4rem;
     width: auto;
 }
 
@@ -302,15 +276,16 @@ vertical-align: 1rem;
 .header__review__button {
 background-color: #026670;
 border-radius: 360px;
+box-shadow: 1px 1px 1px black;
 color: white;
 list-style-type: none;
-margin-left: 1rem;
 margin-right: 1rem;
-padding-left: 2rem;
-padding-right: 2rem;
-padding-top: 0.5rem;
-padding-bottom: 0.5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0.4rem;
+padding-bottom: 0.4rem;
 text-decoration: none;
+width: 100px;
 }
 
 .header__review__button:hover {
@@ -324,11 +299,10 @@ text-decoration: none;
     border-radius: 360px;
     border-color: black;
     color: darkgray;
+    flex: 1;
     font-style: italic;
     height: 2rem;
-    padding-left: 1rem;
-    margin-top: 1rem;
-    width: 20rem;
+    margin: 1rem;
     }
     
     .header__search__box:focus-within {
@@ -340,20 +314,18 @@ text-decoration: none;
     background-color: #026670;
     border-style: none;
     border-radius: 360px;
+    box-shadow: 1px 1px 1px black;
     color: white;
     font-weight: bold;
     height: 2rem;
-    width: 7rem;
+    margin: 1rem;
+    min-width: 5rem;
     
     }
     
     .header__search__button:hover {
-    background-color: black;
-    border-radius: 360px;
+    background-color: #fce181;
     color: white;
-    font-weight: bold;
-    height: 2rem;
-    width: 7rem;
     }
 
 
