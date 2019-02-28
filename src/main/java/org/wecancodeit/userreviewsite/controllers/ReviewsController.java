@@ -40,14 +40,20 @@ public class ReviewsController {
 		if (category == null) {
 			category = categoryRepo.save(new Category(type));
 		} 
-		reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
-		return "redirect:/reviews/" + title;
+		Review newReview = reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
+		//the new variable is so we can pass an ID as the name of the page
+		return "redirect:/reviews/" + newReview.getId();
 	}
 
-	@GetMapping("/{title}") // need to find by the ID instead, otherwise it gives error
-	public String getReview(@PathVariable String title, Model model) {
-		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
-		return "reviews-verify";
+
+	@GetMapping("/{id}")
+	public String getReview(@PathVariable Long id,  Model model) {
+		Review foundReview = reviewRepo.findById(id).get();
+		model.addAttribute("review", foundReview);
+		Category foundCategory = foundReview.getCategory();
+		model.addAttribute("reviewsbycategory", foundCategory.getReviews());
+    return "reviews-verify";
+	
 	}
 	
 
