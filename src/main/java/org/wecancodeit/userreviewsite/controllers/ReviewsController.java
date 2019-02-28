@@ -23,6 +23,11 @@ public class ReviewsController {
 	@Resource
 	CategoryRepository categoryRepo;
 
+	@GetMapping("/all")
+	public String getReviewsall(String review, Model model) {
+		model.addAttribute("reviews", reviewRepo.findAll());
+		return "reviews-all";
+	}
 	@GetMapping("/add")
 	public String getReviewForm(String tag, Model model) {
 		model.addAttribute("categories", categoryRepo.findAll());
