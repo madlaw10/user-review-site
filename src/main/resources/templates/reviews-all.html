@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/reviews-all.css">
-    <title>All Reviews</title>
+    <link rel="stylesheet" href="/css/review-style.css">
+    <title>Document</title>
 </head>
-
 <body>
-    <div class="wrapper">
-        <img class="header__logo" src="../media/vicuriouslogo-white.png">
+        <div class="wrapper">
+                <figure>
+                        <img class="left" src="../media/vicuriouslogo-white2.png" alt = "logo">
+                    </figure>
+                <h2 class="reviews-all"> All Reviews</h2>
+            <div th:each="review : ${reviews}">
+                <h4 class="review-title" th:text="${title}"> Title</h4>
+                <h4 class="review-category" th:text="${category}">Category</h4>
+                <h4 class="review-content" th:text="${content}">Content</h4>
+                <h4 class="review-rating" th:text="${rating}"> Rating</h4>
+                <h4 class="review-date" th:text="${date}"> Date</h4>
+            </div>
+        </div>
         
-        <h2 class="reviews-all"> All Reviews</h2>
-
-            <h4 class="review-title" th:text="${title}"> Title</h4>
-            <h4 class="review-category" th:text="${category}">Category</h4>
-            <h4 class="review-content" th:text="${content}">Content</h4>
-            <h4 class="review-rating" th:text="${rating}"> Rating</h4>
-            <h4 class="review-date" th:text="${date}"> Date</h4>
-</div>
 </body>
-
-
 </html>
