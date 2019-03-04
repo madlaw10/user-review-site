@@ -2,6 +2,7 @@
         margin:0;
         font-family: sans-serif;
         padding:0;
+        list-style-type: none;
     } 
 
     .main__body{
@@ -39,6 +40,9 @@
         margin-right: 12rem;
         background-color: #fce181;
         display:flex;
+        word-wrap: break-word;
+        word-break: break-all;
+        
     }
     .review__img figure{
         height: 300px;
@@ -65,8 +69,13 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
+        
     }
-    .review__comments{
+    ul{
+        list-style-type: none;
+        text-decoration: none;
+    }
+    .comment__list{
         margin-left: 12rem;
         margin-right: 12rem;
         background-color: #fce181;
@@ -74,7 +83,7 @@
         padding-bottom: 1rem;
         text-align: center;
     }
-    .add__comment{
+    /* .comment__list{
         margin-left: 12rem;
         margin-right: 12rem;
         background-color: #fef9c7;
@@ -82,7 +91,7 @@
         padding-bottom: 1rem;
         text-align: center;
 
-    }
+    } */
     .add__button{
         margin-left: 12rem;
         margin-right: 12rem;

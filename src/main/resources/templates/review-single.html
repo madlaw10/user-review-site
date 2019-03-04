@@ -58,29 +58,41 @@
 
     <!--add tags too CURRENTLY NOT WORKING WITH "review.reviewTags-->
      <div class = "review__tags">
-            <h3 th:text="${review.reviewTags}">Default Tags</h3>
+
+            <ul class="review__tags__ul">
+                    <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
+                        <span th:text="${reviewTag.tagName}">Default Tag</span>
+                    </li>
+                </ul>
     </div>
 
+        <div class= "comment__list">
+        <!-- List comments -->
+        <ul class= "review__comments__ul">
+        <li class="review__comment__list" th:each="comment : ${review.comments}">
+                <span th:text="${comment.commentContent}">Default Comment</span>
+            </li>
+        </ul>
+        </div>
 
 
-    <div class = "review__comments">
-           <h3 th:text="${review.comments}">Default Comments</h3>
-    </div><!--closes review__author div-->
+        <div class= "add__comment">
+        <!-- Add Comments -->
+        <form th:action="|/review/${review.title}|" method="POST" class="commentbox">
+            <h4>Add a Comment</h4>
+            <input type="textbox" class="commentbox__textbox" name="commentContent" placeholder="Add a comment"/>
+            <input type="submit" name="submit" value="submit" style="width: 200px;"/>    
+        </form>
 
-
-
-
-    <!-- Need an area to add comment -->
-
-            <div class = "add__comment"> 
-                    <textarea class="commentbox" id="commentbox" name="content" placeholder="Please write your comment here." maxlength="5000" style="width: 500px; height: 220px;"></textarea> 
-             
-           </div>  <!-- closes add_comment -->
-           <nav class= "add__button">
-           <a href="/review/${review.title}">Add Comment</a>
-           </nav>
+    </div>
+        <!-- <ul>
+            <li th:each="comment : ${review.comments}"
+                th:text="${comment.commentContent}">
+            </li>
+        </ul> -->
 
         </div><!--closes wrapper-->
+
     </section><!--closes main body-->
 </body>
 <div class="box footer">
