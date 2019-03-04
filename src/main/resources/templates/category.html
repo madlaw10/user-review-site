@@ -59,7 +59,12 @@
         </div>
         <div class="review" th:each="review : ${category.reviews}">
             <h2 class="review__header">
-                <span class="review__header__title" th:text="${review.title}">Default Title</span>
+
+                 <!--Trying to link to the single review page by clicking on the title  -->
+                <div class="review__header__title">
+                <a th:text="${review.title}"  th:href="@{|/review/${review.title}|}">Default Title</a>
+                <!-- <span class="review__header__title" th:text="${review.title}">Default Title</span> -->
+            </div>
                 <span class="review__header__rating" th:text="${review.rating}">Default Rating</span>
             </h2>
             <span>Submitted by:</span><h3 class="review__author" th:text="${review.author}">Default User</h3>
