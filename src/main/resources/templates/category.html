@@ -23,15 +23,38 @@
                 <li class="header__review__button">Write Review</li>
             </a>
             <a href>
-                <li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login
+                <li class="header__login__button">Login
                 </li>
             </a>
-        </ul>
+  <a href><li><label for="p1" class="button">≡</label></li></a>
+            </ul>
+            <input type="checkbox" class="hide" id="p1">
+
+
+
+          
+          <div id="popup1" class="overlay">
+	<div class="popup">
+    <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
+		<h2>&nbspMenu</h2>
+    <label for="p1" class="close">&times;</label>
+		<div class="menu__content">
+			<ul class="menu__buttons">
+        <input class="menu__search__box" type="search" value="What experience are you looking for...?">
+       <input class="menu__search__button" type="submit" value="Search"></li>
+        <a href="reviews/add"><li class="menu__review__button">Write Review</li></a>
+        <a href><li class="menu__login__button">Login</li></a>
+      </ul>
+     
+		</div>
+	</div>
+</div>
     </header>
     <!--box header-->
 
     <body>
-        <div class="category">
+        <div class="box reviews">
+        <div class="box category">
             <h1 class="category__title" th:text="${category.type}">Default Category</h1>
         </div>
         <div class="review" th:each="review : ${category.reviews}">
@@ -39,14 +62,16 @@
                 <span class="review__header__title" th:text="${review.title}">Default Title</span>
                 <span class="review__header__rating" th:text="${review.rating}">Default Rating</span>
             </h2>
-            <h3 class="review__author" th:text="${review.author}">Default User</h3>
+            <span>Submitted by:</span><h3 class="review__author" th:text="${review.author}">Default User</h3>
             <p class="review__content" th:text="${review.content}">Default Review</p>
+            <span>Tagged as:</span>
             <ul class="review__tags">
                 <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
                     <span th:text="${reviewTag.tagName}">Default Tag</span>
                 </li>
             </ul>
         </div>
+    </div>
 
     </body>
     <div class="box footer">
