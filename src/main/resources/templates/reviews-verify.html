@@ -65,8 +65,14 @@
                 <h5 th:text="${review.rating}"></h5> -->
 
                 <!-- <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title}"></h5> -->
-                <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title + ' ' + review.rating}"></h5>
-                
+                <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title + ' ' + review.rating + ' '+ #strings.abbreviate(review.content, 20)}"></h5>
+                <!-- <li th:each="review: ${reviewsbycategory}">
+                  <h4 th:text="${review.title}"></h4>
+                  <h5 th:text="${review.rating}"></h5>
+                  <p th:text="#strings.abbreviate(review.content, 20)}"></p>
+
+
+                </li> -->
                 
                 
                 
