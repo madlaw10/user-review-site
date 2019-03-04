@@ -27,11 +27,11 @@ public class Review {
 	private String content;
 	@ManyToOne
 	private Category category;
-	@ManyToMany(mappedBy="reviews")
+	@ManyToMany//(mappedBy="reviews")
 	private Collection<ReviewTag> reviewTags;
-	@JoinTable(name = "review_tags",
-			  joinColumns = {@JoinColumn(name = "review_id", referencedColumnName = "id")},
-			  inverseJoinColumns = {@JoinColumn(name = "tag_id}", referencedColumnName = "id")})
+//	@JoinTable(name = "review_tags",
+//			  joinColumns = {@JoinColumn(name = "review_id", referencedColumnName = "id")},
+//			  inverseJoinColumns = {@JoinColumn(name = "tag_id}", referencedColumnName = "id")})
 	@OneToMany(mappedBy="review")
 	private Collection<Comment> comments;
 
@@ -87,6 +87,10 @@ public class Review {
 
 	public void edit(String newReview) {
 		this.content = newReview;
+	}
+	
+	public void addTag(ReviewTag tagToAdd) {
+		reviewTags.add(tagToAdd);
 	}
   
 	@Override
