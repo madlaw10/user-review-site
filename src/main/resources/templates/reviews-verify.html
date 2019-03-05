@@ -37,42 +37,38 @@
             <div class="reviewboxes">
    
                     <h4>Posted in</h4>
-                    <h5 th:text="${review.category.type}"></h5>
+                    <p th:text="${review.category.type}"></p>
     
  
                     <h4>Headline</h4>
-                    <h5 th:text="${review.title}"></h5>
+                    <p th:text="${review.title}"></p>
                     <h4>Review</h4>
-                    <h5 th:text="${review.content}"></h5>
+                    <p th:text="${review.content}"></p>
                     <h4>Author</h4>
-                    <h5 th:text="${review.author}"></h5>
+                    <p th:text="${review.author}"></p>
                     <h4>Attached Photo</h4>
                     <h5>Put Photo here</h5>
     
                     <h4>Rating</h4>
-                    <h5 th:text="${review.rating}"></h5>
+                    <p th:text="${review.rating}"></p>
                     <!--need below to prevent errors-->
     
                      <h4>Tags</h4>
-                    <h5>we be tagging things... one day.</h5>
+                    <p>we be tagging things... one day.</p>
          
 
             </div>
             <div class="similarreviews">
                 <h4>Check out reviews on similar experiences:</h4>
-                <!-- <h5 th:each="review : ${category}"></h5>
-                <h5 th:text="${review.title}"></h5>
-                <h5 th:text="${review.rating}"></h5> -->
-
-                <!-- <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title}"></h5> -->
-                <h5 th:each="review : ${reviewsbycategory}" th:text="${review.title + ' ' + review.rating + ' '+ #strings.abbreviate(review.content, 20)}"></h5>
-                <!-- <li th:each="review: ${reviewsbycategory}">
-                  <h4 th:text="${review.title}"></h4>
-                  <h5 th:text="${review.rating}"></h5>
-                  <p th:text="#strings.abbreviate(review.content, 20)}"></p>
+               
+                
+                <li th:each="review: ${reviewsbycategory}">
+                  <h4 th:text="${review.title + ' Posted By: ' + review.author}"></h4>
+                  <h5 th:text="'Rating: ' + ${review.rating}"></h5>
+                  <p th:text="${#strings.abbreviate(review.content, 20)}"></p>
 
 
-                </li> -->
+                </li>
                 
                 
                 
