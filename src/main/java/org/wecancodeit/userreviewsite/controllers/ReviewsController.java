@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.userreviewsite.models.Category;
 import org.wecancodeit.userreviewsite.models.Review;
+import org.wecancodeit.userreviewsite.models.ReviewTag;
 import org.wecancodeit.userreviewsite.repositories.CategoryRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
+import org.wecancodeit.userreviewsite.repositories.ReviewTagRepository;
 
 @Controller
 @RequestMapping("/reviews")
@@ -22,6 +24,9 @@ public class ReviewsController {
 
 	@Resource
 	CategoryRepository categoryRepo;
+	
+	@Resource
+	ReviewTagRepository reviewTagRepo;
 
 	@GetMapping("/all")
 	public String getReviewsall(String review, Model model) {
@@ -43,6 +48,15 @@ public class ReviewsController {
 		Review newReview = reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
 		//the new variable is so we can pass an ID as the name of the page
 		return "redirect:/reviews/" + newReview.getId();
+	}
+	
+	@PostMapping("/{id}/add")
+	public String addTagToReview(@PathVariable Long id, String tagName) {
+		Review foundReview = reviewRepo.findById(id).get();
+		foundReview.addTag(reviewTagRepo.save(new ReviewTag(tagName)));
+		reviewRepo.save(foundReview);
+		return "redirect:/reviews/" + id;
+
 	}
 
 

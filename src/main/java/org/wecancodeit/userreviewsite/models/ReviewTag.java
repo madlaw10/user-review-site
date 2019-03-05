@@ -17,15 +17,14 @@ public class ReviewTag {
 	private Long id;
 	private String tagName;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="reviewTags")
 	private Collection<Review> reviews;
 	
 	
 	public ReviewTag() {}
 	
-	public ReviewTag(String tagName, Review ...reviews){
+	public ReviewTag(String tagName){
 		this.tagName = tagName;
-		this.reviews = Arrays.asList(reviews);
 			
 	}
 
