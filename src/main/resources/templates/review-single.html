@@ -12,18 +12,41 @@
 </head>
 
 <div class="wrapper">
-<div class="header">
-        <ul>
-            <li class="header__logo">vicuriously.com<span class="header__logo__tm">™</span></li>
-            
-        </ul>
-        <ul class="header__buttons">
-                <a href="/"><li class="header__home__button">Home</li></a>
-            <a href="review/add"><li class="header__review__button">Write Review</li></a>
-            <li class="header__login__button"><a>Login</a></li>
-           
-        </ul>
-    </div><!--box header-->
+        <header>
+            <ul>
+                <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
+            </ul>
+            <ul class="header__buttons">
+                <a href="reviews/add">
+                    <li class="header__review__button">Write Review</li>
+                </a>
+                <a href="">
+                    <li class="header__login__button">Login</li>
+                </a>
+   <a href><li><label for="p1" class="button">≡</label></li></a>
+            </ul>
+            <input type="checkbox" class="hide" id="p1">
+
+
+
+          
+          <div id="popup1" class="overlay">
+	<div class="popup">
+    <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
+		<h2>&nbspMenu</h2>
+    <label for="p1" class="close">&times;</label>
+		<div class="menu__content">
+			<ul class="menu__buttons">
+        <input class="menu__search__box" type="search" value="What experience are you looking for...?">
+       <input class="menu__search__button" type="submit" value="Search"></li>
+        <a href="reviews/add"><li class="menu__review__button">Write Review</li></a>
+        <a href><li class="menu__login__button">Login</li></a>
+      </ul>
+     
+		</div>
+	</div>
+</div>
+        </header>
 <body>
     <section class= "main__body">
     <div class= "title">
@@ -33,7 +56,8 @@
     </div>
 
     <div class= "review__rating">
-            <h2 th:text="${review.rating}">Default Rating</h2>
+        <h2>Rating</h2>
+            <h2 th:text="${review.rating}">Default Rating</h2> (out of 5)
      </div><!--closes review__rating div-->
 
     <section class="main__review">
@@ -46,9 +70,17 @@
 
     <div class = "review__content">
         <h3 th:text="${review.content}">Default Review Content</h3>
-        <h4 th:text="${review.author}">Default Author</h4></p>
+        <p>Submitted by</p><h4  th:text="${review.author}">Default Author</h4></p>
+        <div class = "review__tags">
+
+                <ul class="review__tags__ul">
+                        <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
+                            <span th:text="${reviewTag.tagName}">Default Tag</span>
+                        </li>
+                    </ul>
+        </div>
     </div><!--closes review__content-->
-        
+    
       
     <!-- <div class = "review__author"> 
             <h4 th:text="${review.author}">Default Author</h4>
@@ -57,14 +89,14 @@
 
 
     <!--add tags too CURRENTLY NOT WORKING WITH "review.reviewTags-->
-     <div class = "review__tags">
+     <!-- <div class = "review__tags">
 
             <ul class="review__tags__ul">
                     <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
                         <span th:text="${reviewTag.tagName}">Default Tag</span>
                     </li>
                 </ul>
-    </div>
+    </div> -->
 
         <div class= "comment__list">
         <!-- List comments -->
@@ -80,8 +112,11 @@
         <!-- Add Comments -->
         <form th:action="|/review/${review.title}|" method="POST" class="commentbox">
             <h4>Add a Comment</h4>
-            <input type="textbox" class="commentbox__textbox" name="commentContent" placeholder="Add a comment"/>
-            <input type="submit" name="submit" value="submit" style="width: 200px;"/>    
+            <textarea class="commentbox" name="commentContent" placeholder="Add a comment" maxlength="500" style="width: 400px; height: 220px;" required></textarea>
+            <!-- <input type="textbox" class="commentbox__textbox" name="commentContent" placeholder="Add a comment"/> -->
+            <div class="submit__button">
+                <input type="submit" name="submit" value="submit" style="width: 200px;"/>   
+            </div> 
         </form>
 
     </div>
