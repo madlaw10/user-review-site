@@ -127,13 +127,19 @@ public class Initializer implements CommandLineRunner {
 		
 		//create review tag
 		ReviewTag tag1 = reviewTagRepo.save(new ReviewTag("silentbutdeadly"));
-		//create tag reference to the review
-//		reviewDusting.getReviewTags().add(tag1);
-		reviewDusting.addTag(tag1);
-		//add reference in the tag
-//		tag1.getReviews().add(reviewDusting);
-		//add the sumbitch to the repo
-		reviewRepo.save(reviewDusting);
+//		//create tag reference to the review
+////		reviewDusting.getReviewTags().add(tag1);
+//		reviewDusting.addTag(tag1);
+//		//add reference in the tag
+////		tag1.getReviews().add(reviewDusting);
+//		//add the sumbitch to the repo
+//		reviewRepo.save(reviewDusting);
+		
+		ReviewTag tag = reviewTagRepo.save(new ReviewTag("silentbutdeadly"));
+		reviewRepo.save(new Review("Crop Dusting", 5, "https://uccexpress.ie/wp-content/uploads/2018/10/jogging.jpg",
+				"mateofrito",
+				"Passing by somebody, or " + " a group of people is fun and exciting.  I would highly recommend!",
+				categorySeven, tag));
 		
 	
 		
