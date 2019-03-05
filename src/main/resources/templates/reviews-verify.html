@@ -47,14 +47,15 @@
                     <h4>Author</h4>
                     <p th:text="${review.author}"></p>
                     <h4>Attached Photo</h4>
-                    <h5>Put Photo here</h5>
+                    <img th:src= "@{|${review.imageURL}|}"></img>
     
                     <h4>Rating</h4>
                     <p th:text="${review.rating}"></p>
                     <!--need below to prevent errors-->
     
-                     <h4>Tags</h4>
-                    <p>we be tagging things... one day.</p>
+                     <!-- <h4>Tags</h4>
+                     <p th:text="${review.reviewTags}"></p>
+                     -->
          
 
             </div>
@@ -62,7 +63,7 @@
                 <h4>Check out reviews on similar experiences:</h4>
                
                 
-                <li th:each="review: ${reviewsbycategory}">
+                <li style="list-style: none;" th:each="review: ${reviewsbycategory}">
                   <h4 th:text="${review.title + ' Posted By: ' + review.author}"></h4>
                   <h5 th:text="'Rating: ' + ${review.rating}"></h5>
                   <p th:text="${#strings.abbreviate(review.content, 20)}"></p>
