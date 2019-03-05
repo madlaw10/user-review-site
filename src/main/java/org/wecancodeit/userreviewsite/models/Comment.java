@@ -14,11 +14,11 @@ public class Comment {
 
 	@ManyToOne
 	private Review review;
-	private String userName;
 	
-	public Comment(String commentContent, String userName, Review review) {
+	public Comment() {}
+	
+	public Comment(String commentContent, Review review) {
 		this.commentContent = commentContent;
-		this.userName = userName;
 		this.review = review;
 	}
 
@@ -34,13 +34,9 @@ public class Comment {
 		return review;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
 	@Override
 	public String toString() {
-		return "Comment [commentContent=" + commentContent + ", userName=" + userName + "]";
+		return "Comment [commentContent=" + commentContent + "]";
 	}
 	
 }

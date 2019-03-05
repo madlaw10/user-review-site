@@ -46,7 +46,9 @@ public class Review {
 		this.author = author;
 		this.content = content;
 		this.category = category;
+
 		this.reviewTags = Arrays.asList(reviewTags);
+
 	}
 
 	public Long getId() {

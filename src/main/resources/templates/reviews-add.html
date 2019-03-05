@@ -14,19 +14,47 @@
 <body>
 
   <div class="wrapper">
-      <div class="header">
-          <ul>
-            <li class="header__logo"><img class="header__logo__png" src="../media/vicuriouslogo.png"></li>
-          </ul>
-          <ul>
+      <header>
+        <ul>
+            <li class="header__logo"><a href="/"><img class="header__logo__png" src="../media/vicuriouslogo.png"></a>
+            </li>
+        </ul>
+        <ul>
             <input class="header__search__box" type="search" value="What experience are you looking for...?">
             <input class="header__search__button" type="submit" value="Search">
-          </ul>
-          <ul class="header__buttons">
-          <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
-          <a href><li class="header__login__button" onclick="document.getElementById('id01').style.display='block'">Login</li></a>
-          </ul>
-      </div>
+        </ul>
+        <ul class="header__buttons">
+            <a href="/">
+                <li class="header__cancel__button">Cancel</li>
+            </a>
+            <a href>
+                <li class="header__login__button">Login
+                </li>
+            </a>
+  <a href><li><label for="p1" class="button">≡</label></li></a>
+            </ul>
+            <input type="checkbox" class="hide" id="p1">
+
+
+
+          
+          <div id="popup1" class="overlay">
+	<div class="popup">
+    <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
+		<h2>&nbspMenu</h2>
+    <label for="p1" class="close">&times;</label>
+		<div class="menu__content">
+			<ul class="menu__buttons">
+        <input class="menu__search__box" type="search" value="What experience are you looking for...?">
+       <input class="menu__search__button" type="submit" value="Search"></li>
+        <a href="reviews/add"><li class="menu__cancel__button">Cancel</li></a>
+        <a href><li class="menu__login__button">Login</li></a>
+      </ul>
+     
+		</div>
+	</div>
+</div>
+    </header>
 
          <div class="reviewform">
               <h2 class="review__header">
@@ -47,18 +75,18 @@
     </div>
  
     <h4>Headline</h4>
-    <input type="text" class="headline" id="headline" name="title" placeholder="Write a headline for this review" maxlength="100" style="width: 500px;"></input>
+    <input type="text" class="headline" id="headline" name="title" placeholder="Write a headline for this review" maxlength="100" style="width: 500px;" autofocus required></input>
     <h4>Review</h4>
-    <textarea class="reviewbox" id="reviewbox" name="content" placeholder="Please write your review here." maxlength="5000" style="width: 500px; height: 500px;"></textarea>
+    <textarea class="reviewbox" id="reviewbox" name="content" placeholder="Please write your review here." maxlength="500" style="width: 500px; height: 500px;" required></textarea>
     <h4>Author</h4>
-    <input type="author" class="summary" name="author" placeholder="Share a brief summary of why you chose this star rating." maxlength="100" style="width: 500px; "></textarea>
+    <input type="author" class="summary" name="author" placeholder="What is yoru name." maxlength="100" style="width: 500px; " required></textarea>
     <h4>Add a photo - copy and paste URL below.</h4>
-    <input type="textbox" name="imageURL" id="files" style="width: 500px"/>
+    <input type="textbox" name="imageURL" id="files" style="width: 500px" required/>
     
     <h4>Rating</h4>
     <p>How many stars would you rank this experience? 1-5</p>
     <div class="rate">
-      <input type="radio" id="star5" name="rating" value="5" />
+      <input type="radio" id="star5" name="rating" required value="5" />
       <label for="star5" title="text">★</label>
       <input type="radio" id="star4" name="rating" value="4" />
       <label for="star4" title="text">★</label>
@@ -73,7 +101,7 @@
     
         <h4>Tags</h4>
         <!-- <input type="text" class="tags" id="tags" name="type" placeholder="Include any tags to help other users" style="width: 500px;"/>-->
-        <input type="submit" name="submit" value="submit" style="width: 200px;"/> 
+        <input type="submit" name="submit" value="submit" style="width: 200px;" required/> 
     </form>
 
 
