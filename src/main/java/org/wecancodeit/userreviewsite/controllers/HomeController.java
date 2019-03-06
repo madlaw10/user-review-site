@@ -26,18 +26,21 @@ public class HomeController {
 	@GetMapping("/")
 	public String getCategories(Model model) {
 		model.addAttribute("categories", categoryRepo.findAll());
+		model.addAttribute("reviews", reviewRepo.findAll());
+		model.addAttribute("topReviews", reviewRepo.OrderByRatingDesc());
 		return "home";
 	}
 
-	@GetMapping("/experience")
-	public String getReviews(Model model) {
-		return "experience";
-	}
-
-	@GetMapping("/{type}")
+	@GetMapping("/category/{type}")
 	public String getCategory(@PathVariable String type, Model model) {
 		model.addAttribute("category", categoryRepo.findCategoryByType(type));
 		return "category";
+	}
+	
+	@GetMapping("experience/{title}")
+	public String getReviews(@PathVariable String title, Model model) {
+		model.addAttribute("reviews", reviewRepo.findAllByTitle(title));
+		return "experience";
 	}
 
 	@GetMapping("/review/{title}")
@@ -46,7 +49,6 @@ public class HomeController {
 		return "review-single";
 	}
 
-//	@PostMapping("/review/{title}")
 	@PostMapping("/review/{title}")
 	public String addComment(@PathVariable String title, String commentContent) {
 		commentRepo.save(new Comment(commentContent, reviewRepo.findReviewByTitle(title)));
