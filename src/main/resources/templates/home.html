@@ -20,7 +20,7 @@
                 <a href="reviews/add">
                     <li class="header__review__button">Write Review</li>
                 </a>
-                <a href="">
+                <a href="reviews/all">
                     <li class="header__login__button">Login</li>
                 </a>
                 <a href>
@@ -47,16 +47,30 @@
                                 <li class="menu__login__button">Login</li>
                             </a>
                         </ul>
+   
+          <div id="popup1" class="overlay">
+	<div class="popup">
+    <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
+		<h2>&nbspMenu</h2>
+    <label for="p1" class="close">&times;</label>
+		<div class="menu__content">
+			<ul class="menu__buttons">
+        <input class="menu__search__box" type="search" value="What experience are you looking for...?">
+        <a href="reviews/all"><span class="menu__search__button">Search</span></a>
+        <a href="reviews/add"><li class="menu__review__button">Write Review</li></a>
+        <a href><li class="menu__login__button">Login</li></a>
+      </ul>
+     
+		</div>
+	</div>
+</div>
 
-                    </div>
-                </div>
-            </div>
         </header>
 
         <div class="box content">
             <h1><img class="content__header" src="../media/vicuriouslogo-white.png" alt="Live Vicuriously"></h1>
             <input class="content__search__box" type="search" value="What experience are you looking for...?">
-            <input class="content__search__button" type="submit" value="Search">
+          <a href="reviews/all"><span class="content__search__button">Search</span></a>
         </div>
         <!--box content-->
 
