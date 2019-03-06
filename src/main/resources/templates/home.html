@@ -93,20 +93,19 @@
             <p class="sidebar__content">
                 <ul class="sidebar__content__ul">
                     <li class="sidebar__content__li" th:each="review, reviewStat : ${reviews}">
-                        <a th:text="${review.title}" th:href="@{|experience/${review.title}|}"
+                        <a th:text="${review.title}" th:href="@{|/reviews/review/${review.id}|}"
                             th:unless="${reviewStat.index > 4}">Default Experience</a>
                     </li>
                 </ul>
             </p>
         </div>
         <!--box sidebar2-->
-
         <div class="box sidebar3">
             <h2 class="sidebar__header">Top Experiences</h2>
             <p class="sidebar__content">See our users' highest rated experiences:
                 <ul class="sidebar__content__ul">
                     <li class="sidebar__content__li" th:each="review, reviewStat : ${topReviews}">
-                        <a th:text="${review.title}" th:href="@{|review/${review.title}|}"
+                        <a th:text="${review.title}" th:href="@{|/reviews/review/${review.id}|}"
                             th:unless="${reviewStat.index > 4}">Default Experience</a>
                     </li>
                 </ul>

@@ -13,87 +13,67 @@
     <div class="wrapper">
         <header>
             <ul>
-                <li class="header__logo"><a href="/"><img class="header__logo__png" src="../media/vicuriouslogo.png"></a></li>
+                <li class="header__logo"><a href="/"><img class="header__logo__png"
+                            src="../media/vicuriouslogo.png"></a></li>
             </ul>
             <ul>
                 <input class="header__search__box" type="search" value="What experience are you looking for...?">
                 <input class="header__search__button" type="submit" value="Search">
             </ul>
             <ul class="header__buttons">
-                <a href="reviews/add"><li class="header__review__button">Write Review</li></a>
-                <a href><li class="header__login__button">Login</li></a>
-              <a href><li><label for="p1" class="button">≡</label></li></a>
+                <a href="reviews/add">
+                    <li class="header__review__button">Write Review</li>
+                </a>
+                <a href>
+                    <li class="header__login__button">Login</li>
+                </a>
+                <a href>
+                    <li><label for="p1" class="button">≡</label></li>
+                </a>
             </ul>
             <input type="checkbox" class="hide" id="p1">
 
-
-
-          
-          <div id="popup1" class="overlay">
-	<div class="popup">
-    <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
-		<h2>&nbspMenu</h2>
-    <label for="p1" class="close">&times;</label>
-		<div class="menu__content">
-			<ul class="menu__buttons">
-        <input class="menu__search__box" type="search" value="What experience are you looking for...?">
-       <input class="menu__search__button" type="submit" value="Search"></li>
-        <a href="reviews/add"><li class="menu__review__button">Write Review</li></a>
-        <a href><li class="menu__login__button">Login</li></a>
-      </ul>
-     
-		</div>
-	</div>
-</div>
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <li class="menu__logo"><a href="/"><img class="menu__logo__png"
+                                src="../media/vicuriouslogo.png"></a></li>
+                    <h2>&nbspMenu</h2>
+                    <label for="p1" class="close">&times;</label>
+                    <div class="menu__content">
+                        <ul class="menu__buttons">
+                            <input class="menu__search__box" type="search"
+                                value="What experience are you looking for...?">
+                            <input class="menu__search__button" type="submit" value="Search"></li>
+                            <a href="reviews/add">
+                                <li class="menu__review__button">Write Review</li>
+                            </a>
+                            <a href>
+                                <li class="menu__login__button">Login</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </header>
         <!--box header-->
+
         <div class="box content">
             <h2 class="content__experience__name">Experience Name</h2>
             <img class="content__experience__image" src="https://s.w-x.co/thinkstockphotos-79994979.jpg">
             <img class="content__rating__image" src="/media/four-stars.png" alt="Four Stars">
-            <p class="content__experience__description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit
-                provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat,
-                consequuntur assumenda debitis velit!
-            </p>
-
         </div>
         <!--box content-->
-        <div class="box review">
-            <h2 class="review__header">Review 1</h2>
-            <p class="review__content">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit
-                provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat,
-                consequuntur assumenda debitis velit!
-            </p>
 
-
+        <div class="box reviews" th:each="review : ${reviews}">
+            <h2 class="review__header" th:text="${review.title}">Default Review</h2>
+            <h3 class="review__sub-header"><span th:text="${review.rating}">Default Rating</span>(out of 5)</h3>
+            <p class="review__content" th:text="${review.content}">Default Content</p>                    
         </div>
         <!--box review-->
-        <div class="box review2">
-            <h2 class="review2__header">Review 2</h2>
-            <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident
-                officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi
-                voluptatibus nam aliquid vitae illum vero nemo amet.
 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem
-                asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid
-                vitae illum vero nemo amet.</p>
-        </div>
-        <!--box review2-->
-        <div class="box review3">
-            <h2 class="review3__header">Review 3</h2>
-            <p class="review__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident
-                officia exercitationem asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi
-                voluptatibus nam aliquid vitae illum vero nemo amet.
-
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident officia exercitationem
-                asperiores a ratione voluptates rem, fugit fuga architecto aspernatur, nisi voluptatibus nam aliquid
-                vitae illum vero nemo amet.</p>
-        </div>
-        <!--box review3-->
-            <footer class="box footer">Team 3, 2019.</footer>
+        <footer class="box footer">Team 3, 2019.</footer>
     </div>
+    <!--close wrapper-->
 </body>
 
 </html>
