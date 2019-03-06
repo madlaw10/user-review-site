@@ -137,7 +137,7 @@ public class Initializer implements CommandLineRunner {
 		reviewRepo.save(new Review("Crop Dusting", 5, "https://uccexpress.ie/wp-content/uploads/2018/10/jogging.jpg",
 				"mateofrito",
 				"Passing by somebody, or " + " a group of people is fun and exciting.  I would highly recommend!",
-				categorySeven, tag));
+				categoryOne, tag));
 		
 	
 		
