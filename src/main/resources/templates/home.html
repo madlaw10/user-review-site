@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Vi-curiously - Be Curious, vicariously.</title>
 </head>
 
@@ -24,13 +23,31 @@
                 <a href="reviews/all">
                     <li class="header__login__button">Login</li>
                 </a>
-   <a href><li><label for="p1" class="button">≡</label></li></a>
+                <a href>
+                    <li><label for="p1" class="button">≡</label></li>
+                </a>
             </ul>
             <input type="checkbox" class="hide" id="p1">
 
-
-
-          
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <li class="menu__logo"><a href="/"><img class="menu__logo__png"
+                                src="../media/vicuriouslogo.png"></a></li>
+                    <h2>&nbspMenu</h2>
+                    <label for="p1" class="close">&times;</label>
+                    <div class="menu__content">
+                        <ul class="menu__buttons">
+                            <input class="menu__search__box" type="search"
+                                value="What experience are you looking for...?">
+                            <input class="menu__search__button" type="submit" value="Search"></li>
+                            <a href="reviews/add">
+                                <li class="menu__review__button">Write Review</li>
+                            </a>
+                            <a href>
+                                <li class="menu__login__button">Login</li>
+                            </a>
+                        </ul>
+   
           <div id="popup1" class="overlay">
 	<div class="popup">
     <li class="menu__logo"><a href="/"><img class="menu__logo__png" src="../media/vicuriouslogo.png"></a></li>
@@ -47,6 +64,7 @@
 		</div>
 	</div>
 </div>
+
         </header>
 
         <div class="box content">
@@ -59,10 +77,10 @@
         <div class="box sidebar">
             <h2 class="sidebar__header">Categories</h2>
             <p class="sidebar__content">
-                Browse Experiences by Category
+                Browse experiences by category
                 <ul class="sidebar__content__ul">
-                    <li th:each="category : ${categories}">
-                        <a th:text="${category.type}" th:href="@{|${category.type}|}">Default Category</a>
+                    <li class="sidebar__content__li" th:each="category : ${categories}">
+                        <a th:text="${category.type}" th:href="@{|category/${category.type}|}">Default Category</a>
                     </li>
                 </ul>
             </p>
@@ -71,28 +89,34 @@
 
         <div class="box sidebar2">
             <h2 class="sidebar__header">Featured</h2>
-            <p class="sidebar__content">Check out this week's featured experience!</p>
-            <p class="sidebar__content"><a href="experience">Sample Experience</a></p>
+            <p class="sidebar__content">Check out this week's featured experiences!</p>
+            <p class="sidebar__content">
+                <ul class="sidebar__content__ul">
+                    <li class="sidebar__content__li" th:each="review, reviewStat : ${reviews}">
+                        <a th:text="${review.title}" th:href="@{|experience/${review.title}|}"
+                            th:unless="${reviewStat.index > 4}">Default Experience</a>
+                    </li>
+                </ul>
+            </p>
         </div>
         <!--box sidebar2-->
 
         <div class="box sidebar3">
             <h2 class="sidebar__header">Top Experiences</h2>
-            <p class="sidebar__content">Below are the top 5 experiences based on user ratings:
+            <p class="sidebar__content">See our users' highest rated experiences:
                 <ul class="sidebar__content__ul">
-                    <li class="sidebar__content__li">Getting a root canal</li>
-                    <li class="sidebar__content__li">Driving in rush hour traffic in downtown LA</li>
-                    <li class="sidebar__content__li">Falling down icy steps</li>
-                    <li class="sidebar__content__li">Divorce</li>
-                    <li class="sidebar__content__li">Getting in a fist fight</li>
+                    <li class="sidebar__content__li" th:each="review, reviewStat : ${topReviews}">
+                        <a th:text="${review.title}" th:href="@{|review/${review.title}|}"
+                            th:unless="${reviewStat.index > 4}">Default Experience</a>
+                    </li>
                 </ul>
             </p>
         </div>
         <!--box sidebar3-->
-            <div class="box footer">
-                <footer>Team 3, 2019.</footer>
-            </div>
-            <!--box footer-->
+        <div class="box footer">
+            <footer>Team 3, 2019.</footer>
+        </div>
+        <!--box footer-->
     </div>
 </body>
 
