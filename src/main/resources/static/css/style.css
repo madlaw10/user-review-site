@@ -304,8 +304,8 @@ padding: 0;
 
 .sidebar__content {
 color: black;
-padding-left: 4rem;
-padding-right: 4rem;
+padding-left: 2rem;
+padding-right: 2rem;
 padding-bottom: 1rem;
 padding-top: 1rem;
 }
@@ -317,13 +317,12 @@ padding-top: 1rem;
 .sidebar__content__ul {
 color: #026670;
 list-style-type: square;
-padding-left: 4rem;
-padding-right: 4rem;
-padding-bottom: 2rem;
+padding-left: 2rem;
+padding-right: 2rem;
 }
 
 .sidebar__content__li {
-  padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .sidebar__header {
