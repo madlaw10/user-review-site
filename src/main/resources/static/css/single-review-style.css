@@ -67,12 +67,9 @@
     }
    .review__tags__tag{
         background-color: #edeae5;
-       
-        /* margin-right: 6rem; */
+        margin-right: 6px;
         padding: 5px;
         border-radius: 4px;
-        /* text-align: center; */
-       
         border: 1px solid black;
         display: inline;
     } 
@@ -509,3 +506,4 @@
               "reviews"
               "footer";
           }
+        }

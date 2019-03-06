@@ -36,10 +36,5 @@ public class HomeController {
 		model.addAttribute("category", categoryRepo.findCategoryByType(type));
 		return "category";
 	}
-	
-	@GetMapping("experience/{title}")
-	public String getReviews(@PathVariable String title, Model model) {
-		model.addAttribute("reviews", reviewRepo.findAllByTitle(title));
-		return "experience";
-	}
+
 }
