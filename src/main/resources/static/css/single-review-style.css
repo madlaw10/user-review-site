@@ -63,13 +63,26 @@
         border-radius: 18px;
     }
    .review__tags__tag{
-        background-color: #fce181;
-        margin: 5px;
-        padding: 3px;
-        border-radius: 10px;
-   
-        
+        background-color: #edeae5;
+       
+        /* margin-right: 6rem; */
+        padding: 5px;
+        border-radius: 4px;
+        /* text-align: center; */
+       
+        border: 1px solid black;
+        display: inline;
     } 
+    .review__tags{
+        margin-top: 1rem;
+
+    }
+    .review__tags h4{
+      margin-bottom: 9px;
+    }
+    .review__tags__ul{
+      margin-top: 1px;
+    }
 
     ul{
         list-style-type: none;

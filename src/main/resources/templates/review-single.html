@@ -70,9 +70,9 @@
 
     <div class = "review__content">
         <h3 th:text="${review.content}">Default Review Content</h3>
-        <p>Submitted by</p><h4  th:text="${review.author}">Default Author</h4></p>
+        <p>Submitted by:</p><h4  th:text="${review.author}">Default Author</h4></p>
         <div class = "review__tags">
-
+            <h4>Tags</h4>
                 <ul class="review__tags__ul">
                         <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
                             <span th:text="${reviewTag.tagName}">Default Tag</span>
