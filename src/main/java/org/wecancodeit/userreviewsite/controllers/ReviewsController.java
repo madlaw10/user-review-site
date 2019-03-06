@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.userreviewsite.models.Category;
+import org.wecancodeit.userreviewsite.models.Comment;
 import org.wecancodeit.userreviewsite.models.Review;
 import org.wecancodeit.userreviewsite.models.ReviewTag;
 import org.wecancodeit.userreviewsite.repositories.CategoryRepository;
+import org.wecancodeit.userreviewsite.repositories.CommentRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewTagRepository;
 
@@ -27,6 +29,9 @@ public class ReviewsController {
 	
 	@Resource
 	ReviewTagRepository reviewTagRepo;
+	
+	@Resource
+	CommentRepository commentRepo;
 
 	@GetMapping("/all")
 	public String getReviewsall(String review, Model model) {
@@ -69,6 +74,16 @@ public class ReviewsController {
 		Category foundCategory = foundReview.getCategory();
 		model.addAttribute("reviewsbycategory", foundCategory.getReviews());
     return "reviews-verify";
+	}
+	@GetMapping("/review/{id}")
+	public String getSingleReview(@PathVariable Long id, Model model) {
+		model.addAttribute("review", reviewRepo.findById(id).get());
+		return "review-single";
+	}
+	@PostMapping("/review/{id}")
+	public String addComment(@PathVariable Long id, String commentContent) {
+		commentRepo.save(new Comment(commentContent, reviewRepo.findById(id).get()));
+		return "redirect:/review/{id}";
 	}
 	
 

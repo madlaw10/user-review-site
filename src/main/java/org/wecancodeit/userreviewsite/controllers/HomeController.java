@@ -42,17 +42,4 @@ public class HomeController {
 		model.addAttribute("reviews", reviewRepo.findAllByTitle(title));
 		return "experience";
 	}
-
-	@GetMapping("/review/{title}")
-	public String getReview(@PathVariable String title, Model model) {
-		model.addAttribute("review", reviewRepo.findReviewByTitle(title));
-		return "review-single";
-	}
-
-	@PostMapping("/review/{title}")
-	public String addComment(@PathVariable String title, String commentContent) {
-		commentRepo.save(new Comment(commentContent, reviewRepo.findReviewByTitle(title)));
-		return "redirect:/review/{title}";
-	}
-
 }

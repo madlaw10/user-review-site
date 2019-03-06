@@ -475,3 +475,9 @@
         position: absolute;
       }
       /* End all header and pop-up menu CSS */
+      .footer {
+        background-color: #fce181;
+        margin: 0;
+        text-align: center;
+        color:white;
+        }
