@@ -64,7 +64,6 @@ public class ReviewsController {
 		foundReview.addTag(reviewTagRepo.save(new ReviewTag(tagName)));
 		reviewRepo.save(foundReview);
 		return "redirect:/reviews/" + id;
-
 	}
 
 
@@ -75,7 +74,6 @@ public class ReviewsController {
 		Category foundCategory = foundReview.getCategory();
 		model.addAttribute("reviewsbycategory", foundCategory.getReviews());
     return "reviews-verify";
-	
 	}
 	@GetMapping("/review/{id}")
 	public String getSingleReview(@PathVariable Long id, Model model) {

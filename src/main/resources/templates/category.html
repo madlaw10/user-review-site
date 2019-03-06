@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/category-styling.css">
-    <title>Categories</title>
+    <link rel="stylesheet" href="/css/category-styling.css">
+    <title>Category</title>
 </head>
 <div class="wrapper">
     <header>
@@ -63,7 +63,7 @@
                  <!--Trying to link to the single review page by clicking on the title  -->
                 <div class="review__header__title">
                         <!-- <a th:text="${review.title}"  th:href="@{|/review/${review.title}|}">Default Title</a> -->
-                <a th:text="${review.title}"  th:href="@{|reviews/review/${review.id}|}">Default Title</a>
+                <a th:text="${review.title}"  th:href="@{|/reviews/review/${review.id}|}">Default Title</a>
                 <!-- <span class="review__header__title" th:text="${review.title}">Default Title</span> -->
             </div>
                 <span class="review__header__rating" th:text="${review.rating}">Default Rating</span>
