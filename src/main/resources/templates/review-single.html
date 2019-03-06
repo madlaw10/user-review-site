@@ -80,23 +80,8 @@
                     </ul>
         </div>
     </div><!--closes review__content-->
-    
-      
-    <!-- <div class = "review__author"> 
-            <h4 th:text="${review.author}">Default Author</h4>
-    </div>  -->
 </section> <!--closes main__review section-->
-
-
-    <!--add tags too CURRENTLY NOT WORKING WITH "review.reviewTags-->
-     <!-- <div class = "review__tags">
-
-            <ul class="review__tags__ul">
-                    <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">
-                        <span th:text="${reviewTag.tagName}">Default Tag</span>
-                    </li>
-                </ul>
-    </div> -->
+      
 
         <div class= "comment__list">
         <!-- List comments -->
@@ -110,21 +95,17 @@
 
         <div class= "add__comment">
         <!-- Add Comments -->
-        <form th:action="|/review/${review.title}|" method="POST" class="commentbox">
+        <form th:action="|/reviews/review/${review.id}|" method="POST" class="commentbox">
             <h4>Add a Comment</h4>
             <textarea class="commentbox" name="commentContent" placeholder="Add a comment" maxlength="500" style="width: 400px; height: 220px;" required></textarea>
-            <!-- <input type="textbox" class="commentbox__textbox" name="commentContent" placeholder="Add a comment"/> -->
+
             <div class="submit__button">
                 <input type="submit" name="submit" value="submit" style="width: 200px;"/>   
             </div> 
         </form>
 
     </div>
-        <!-- <ul>
-            <li th:each="comment : ${review.comments}"
-                th:text="${comment.commentContent}">
-            </li>
-        </ul> -->
+
 
         </div><!--closes wrapper-->
 
