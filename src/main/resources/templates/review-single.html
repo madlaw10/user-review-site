@@ -99,7 +99,9 @@
 
         <div class= "add__comment">
         <!-- Add Comments -->
+      
         <form th:action="|/reviews/review/${review.id}|" method="POST" class="commentbox">
+        <!-- <form th:action="@{|/reviews/review/${review.id}|}" method="POST" class="commentbox"> -->
             <h4>Add a Comment</h4>
             <textarea class="commentbox" name="commentContent" placeholder="Add a comment" maxlength="500" style="width: 400px; height: 220px;" required></textarea>
 
