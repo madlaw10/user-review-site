@@ -42,21 +42,33 @@ public class ReviewsController {
 	@PostMapping("/add")
 	public String addReview(String title, int rating, String imageURL, String author, String content, String type, String tag){
 		Category category = categoryRepo.findCategoryByType(type);
+		ReviewTag tagName = reviewTagRepo.save(new ReviewTag(tag));
 		if (category == null) {
 			category = categoryRepo.save(new Category(type));
 		} 
 		if (imageURL.isEmpty()) {
 			imageURL = "https://picsum.photos/200/300/?blur";
 		}
-		Review newReview = reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
+		Review newReview = reviewRepo.save(new Review(title, rating, imageURL, author, content, category, tagName));
+		
+		
+		//my mess
+		
+//		Long id = newReview.getId();
+//		Review foundReview = reviewRepo.findById(id).get();
+//		
+//		foundReview.addTag(reviewTagRepo.save(new ReviewTag(tag)));
+//		reviewRepo.save(foundReview);
+//		
+		
 		//the new variable is so we can pass an ID as the name of the page
 		return "redirect:/reviews/" + newReview.getId();
 	}
 	
 	@PostMapping("/{id}/add")
-	public String addTagToReview(@PathVariable Long id, String tagName) {
+	public String addTagToReview(@PathVariable Long id, String tag) {
 		Review foundReview = reviewRepo.findById(id).get();
-		foundReview.addTag(reviewTagRepo.save(new ReviewTag(tagName)));
+		foundReview.addTag(reviewTagRepo.save(new ReviewTag(tag)));
 		reviewRepo.save(foundReview);
 		return "redirect:/reviews/" + id;
 

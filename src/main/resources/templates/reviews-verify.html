@@ -94,7 +94,7 @@
                 <li style="list-style: none;" th:each="review: ${reviewsbycategory}">
                   <h4 th:text="${review.title + ' Posted By: ' + review.author}"></h4>
                   <h5 th:text="'Rating: ' + ${review.rating}"></h5>
-                  <p th:text="${#strings.abbreviate(review.content, 20)}"></p>
+                  <p th:text="${#strings.abbreviate(review.content, 20)}"></p><a th:text=" '  read more.' " th:href="@{|/reviews/review/${review.id}|}"></a>
 
 
                 </li>
