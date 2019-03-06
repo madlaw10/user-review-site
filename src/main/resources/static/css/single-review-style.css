@@ -480,4 +480,29 @@
         margin: 0;
         text-align: center;
         color:white;
+        padding-top: 3px;
+        padding-bottom: 7px;
         }
+
+        @media only screen and (min-width: 1171px) {
+          .button {
+            display: none;
+          }
+          p1.hide {
+            display: none;
+          }
+          header {
+            padding: 6px;
+          }
+        }
+        
+        @media only screen and (max-width: 1170px) {
+          .wrapper {
+            background-color: #edeae5;
+            color: #444;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-areas:
+              "reviews"
+              "footer";
+          }
