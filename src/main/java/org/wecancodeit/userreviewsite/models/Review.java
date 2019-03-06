@@ -78,6 +78,8 @@ public class Review {
 	public Category getCategory() {
 		return category;
 	}
+	
+	
   
 	public Collection<ReviewTag> getReviewTags() {
 		return reviewTags;
@@ -98,6 +100,6 @@ public class Review {
 	@Override
 	public String toString() {
 		return "Title: " + this.getTitle() + "; Rating (out of five): " + this.getRating() + "; User: "
-				+ this.getAuthor() + "; Category: " + this.getCategory().getType() + "; Review:" + this.getContent();
+				+ this.getAuthor() + "; Category: " + this.getCategory().getType() + "; Review:" + this.getContent() + "; Tags: "+ this.getReviewTags();
   }
 }

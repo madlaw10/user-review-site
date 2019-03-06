@@ -40,11 +40,14 @@ public class ReviewsController {
 	}
 
 	@PostMapping("/add")
-	public String addReview(String title, int rating, String imageURL, String author, String content, String type) {
+	public String addReview(String title, int rating, String imageURL, String author, String content, String type, String tag){
 		Category category = categoryRepo.findCategoryByType(type);
 		if (category == null) {
 			category = categoryRepo.save(new Category(type));
 		} 
+		if (imageURL.isEmpty()) {
+			imageURL = "https://picsum.photos/200/300/?blur";
+		}
 		Review newReview = reviewRepo.save(new Review(title, rating, imageURL, author, content, category));
 		//the new variable is so we can pass an ID as the name of the page
 		return "redirect:/reviews/" + newReview.getId();
