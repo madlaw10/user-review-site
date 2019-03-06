@@ -29,9 +29,6 @@
             </ul>
             <input type="checkbox" class="hide" id="p1">
 
-
-
-
             <div id="popup1" class="overlay">
                 <div class="popup">
                     <li class="menu__logo"><a href="/"><img class="menu__logo__png"
@@ -68,7 +65,7 @@
             <p class="sidebar__content">
                 Browse experiences by category
                 <ul class="sidebar__content__ul">
-                    <li th:each="category : ${categories}">
+                    <li class="sidebar__content__li" th:each="category : ${categories}">
                         <a th:text="${category.type}" th:href="@{|category/${category.type}|}">Default Category</a>
                     </li>
                 </ul>
@@ -80,8 +77,8 @@
             <h2 class="sidebar__header">Featured</h2>
             <p class="sidebar__content">Check out this week's featured experiences!</p>
             <p class="sidebar__content">
-                <ul>
-                    <li th:each="review, reviewStat : ${reviews}">
+                <ul class="sidebar__content__ul">
+                    <li class="sidebar__content__li" th:each="review, reviewStat : ${reviews}">
                         <a th:text="${review.title}" th:href="@{|experience/${review.title}|}"
                             th:unless="${reviewStat.index > 4}">Default Experience</a>
                     </li>
@@ -93,8 +90,8 @@
         <div class="box sidebar3">
             <h2 class="sidebar__header">Top Experiences</h2>
             <p class="sidebar__content">See our users' highest rated experiences:
-                <ul class="sidebar__content__ul" th:each="review, reviewStat : ${topReviews}">
-                    <li class="sidebar__content__li">
+                <ul class="sidebar__content__ul">
+                    <li class="sidebar__content__li" th:each="review, reviewStat : ${topReviews}">
                         <a th:text="${review.title}" th:href="@{|review/${review.title}|}"
                             th:unless="${reviewStat.index > 4}">Default Experience</a>
                     </li>
