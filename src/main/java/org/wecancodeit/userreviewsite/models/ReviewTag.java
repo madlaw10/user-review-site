@@ -1,6 +1,5 @@
 package org.wecancodeit.userreviewsite.models;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
