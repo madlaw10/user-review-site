@@ -93,7 +93,7 @@ public class Initializer implements CommandLineRunner {
 						+ " consequuntur assumenda debitis velit!",
 				categoryFour, tagTwo, tagFour, tagEight));
 
-		Category categoryFive = categoryRepo.save(new Category("Life-Threatening"))
+		Category categoryFive = categoryRepo.save(new Category("Life-Threatening"));
 		reviewRepo.save(
 				new Review("Skydiving", 0, "https://www.skydivelongisland.com/images/article/Skydive-Tracking.jpg",
 						"madlaw10", "AHHHHHHHHHHHHHHH", categoryFive, tagOne, tagSeven));
