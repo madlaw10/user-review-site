@@ -33,7 +33,8 @@ public class Initializer implements CommandLineRunner {
 		ReviewTag tag5 = reviewTagRepo.save(new ReviewTag("test"));
 		ReviewTag tag6 = reviewTagRepo.save(new ReviewTag("test"));
 		ReviewTag tag7 = reviewTagRepo.save(new ReviewTag("test"));
-		Category categoryOne = categoryRepo.save(new Category("Amusement & Entertainment"));
+		Category categoryOne = categoryRepo.save(new Category("Amusement & Entertainment"));		
+		Review reviewZero = reviewRepo.save(new Review("Swimming with Humans", 3, "https://i.imgur.com/EbyUSRX.png", "Ecco", "Disgusting!", categoryOne, tag1, tag2));
 		Review reviewOne = reviewRepo.save(new Review("Riding a Roller Coaster", 1, "https://uccexpress.ie/wp-content/uploads/2018/10/jogging.jpg", 
 				"AnthonyLam", "It's the scariest damn thing in the world.  I not only threw up, but I pooped my pants, I'll review those in another post.  " + 
 						"The embarrasement of getting sick on myself was bad enough, I had to finish the ride covered in bodily fluids.  Would not recommend." + 
@@ -79,7 +80,7 @@ public class Initializer implements CommandLineRunner {
 		
 		Category categoryFive = categoryRepo.save(new Category("Life-Threatening"));
 		Review reviewEight = reviewRepo.save(new Review("Skydiving", 0, "https://www.skydivelongisland.com/images/article/Skydive-Tracking.jpg", 
-				"madlaw10", "AHHHHHHHHHHHHHHH", 
+				"madlaw10", "AHHHHHHHHHHHHHHHHHHHHH", 
 						categoryFive, tag2));
 		Review reviewNine = reviewRepo.save(new Review("Foregoing Vaccinations", 0, "https://www.skydivelongisland.com/images/article/Skydive-Tracking.jpg", 
 				"madlaw10", "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit" + 
