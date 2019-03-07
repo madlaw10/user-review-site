@@ -26,6 +26,7 @@ public class Initializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+  
 		ReviewTag tagZero = reviewTagRepo.save(new ReviewTag("gross"));
 		ReviewTag tagOne = reviewTagRepo.save(new ReviewTag("dangerous"));
 		ReviewTag tagTwo = reviewTagRepo.save(new ReviewTag("expensive"));
@@ -37,7 +38,8 @@ public class Initializer implements CommandLineRunner {
 		ReviewTag tagEight = reviewTagRepo.save(new ReviewTag("time-consuming"));
 
 		Category categoryOne = categoryRepo.save(new Category("Amusement & Entertainment"));
-		reviewRepo.save(new Review("Riding a Roller Coaster", 1,
+    reviewRepo.save(new Review("Swimming with Humans", 3, "https://i.imgur.com/EbyUSRX.png", "Ecco", "Disgusting! Get him off of me!", categoryOne, tagZero, tagThree, tagEight));
+    reviewRepo.save(new Review("Riding a Roller Coaster", 1,
 				"https://uccexpress.ie/wp-content/uploads/2018/10/jogging.jpg", "AnthonyLam",
 				"It's the scariest damn thing in the world.  I not only threw up, but I pooped my pants, I'll review those in another post.  "
 						+ "The embarrasement of getting sick on myself was bad enough, I had to finish the ride covered in bodily fluids.  Would not recommend."
@@ -53,7 +55,7 @@ public class Initializer implements CommandLineRunner {
 				"mateofrito",
 				"Passing by somebody, or " + " a group of people is fun and exciting.  I would highly recommend!",
 				categoryOne, tagZero, tagThree, tagFive, tagSeven));
-
+    
 		Category categoryTwo = categoryRepo.save(new Category("Financial"));
 		reviewRepo.save(new Review("Opening a Bank Account", 3,
 				"https://uccexpress.ie/wp-content/uploads/2018/10/jogging.jpg", "M_Scott_DunMifflin",
@@ -91,15 +93,13 @@ public class Initializer implements CommandLineRunner {
 						+ " consequuntur assumenda debitis velit!",
 				categoryFour, tagTwo, tagFour, tagEight));
 
-		Category categoryFive = categoryRepo.save(new Category("Life-Threatening"));
+		Category categoryFive = categoryRepo.save(new Category("Life-Threatening"))
 		reviewRepo.save(
 				new Review("Skydiving", 0, "https://www.skydivelongisland.com/images/article/Skydive-Tracking.jpg",
 						"madlaw10", "AHHHHHHHHHHHHHHH", categoryFive, tagOne, tagSeven));
 		reviewRepo.save(new Review("Foregoing Vaccinations", 0,
 				"https://www.skydivelongisland.com/images/article/Skydive-Tracking.jpg", "madlaw10",
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cupiditate tempore deserunt odit"
-						+ " provident dolore architecto eius et quia temporibus harum ratione quisquam excepturi totam repellat,"
-						+ " consequuntur assumenda debitis velit!",
+				"Oh shit, I'm dying.",
 				categoryFive, tagOne, tagFive));
 
 		Category categorySix = categoryRepo.save(new Category("Professional"));
