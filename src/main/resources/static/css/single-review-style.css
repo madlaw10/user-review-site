@@ -69,7 +69,6 @@
     } 
     .review__tags{
         margin-top: 1rem;
-
     }
     .review__tags h4{
       margin-bottom: 9px;
@@ -109,8 +108,7 @@
         margin-top: 1rem;
         padding: 1rem;
         font-size: 100%;  
-    }
-    
+  
     header {
         background-color: white;
         box-shadow: 1px 1px 1px black;
