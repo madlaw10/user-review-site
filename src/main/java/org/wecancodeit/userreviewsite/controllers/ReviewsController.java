@@ -85,7 +85,7 @@ public class ReviewsController {
 		model.addAttribute("review", foundReview);
 		Category foundCategory = foundReview.getCategory();
 		model.addAttribute("reviewsbycategory", foundCategory.getReviews());
-    return "reviews-verify";
+    return "review-verify2";
 	}
 	@GetMapping("/review/{id}")
 	public String getSingleReview(@PathVariable Long id, Model model) {
