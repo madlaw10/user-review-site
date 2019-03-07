@@ -24,20 +24,6 @@ grid-template-areas:
 }
 
 
-<<<<<<< HEAD
-
-
-@media only screen and (min-width: 1001px) {
-  .button {
-    display: none;
-  }
-  p1.hide {
-    display: none;
-  }
-  header {
-    padding: 6px;
-  }
-=======
 @media only screen and (min-width: 1101px) {
 .button {
   display: none;
@@ -48,7 +34,6 @@ p1.hide {
 header {
   padding: 6px;
 }
->>>>>>> 4c00f9e2651751cb154fca57c3de95c47ef4f1e1
 }
 
 @media only screen and (max-width: 1100px) {
