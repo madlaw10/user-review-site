@@ -27,8 +27,8 @@ a {
   margin-top: 6rem;
   padding-top: 6px;
   padding-bottom: 6px;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 20%;
+  margin-right: 20%;
   border-top-color: black solid 2px;
   text-align: center;
   color: white;
@@ -42,14 +42,14 @@ h1 {
   background-color: #026670;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
 }
 
 .main__review {
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 20%;
+  margin-right: 20%;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -106,8 +106,8 @@ ul {
   text-decoration: none;
 }
 .comment__list {
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 20%;
+  margin-right: 20%;
   background-color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -117,8 +117,8 @@ ul {
 .add__comment {
   display: flex;
   flex-direction: column;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 20%;
+  margin-right: 20%;
   background-color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -143,6 +143,8 @@ ul {
   color: white;
   padding-top: 3px;
   padding-bottom: 7px;
+  border-style: none;
+  width: 100%;
 }
 
 @media only screen and (min-width: 1151px) {
@@ -169,6 +171,17 @@ ul {
       "footer";
   }
 
+  .title,
+  .review__rating,
+  .main__review,
+  .comment__list,
+  .add__comment
+  {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    border-style: none;
+  }
+  
   header {
     padding: 1px;
   }
