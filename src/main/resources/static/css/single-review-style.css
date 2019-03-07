@@ -20,8 +20,6 @@
         margin-left: 12rem;
         margin-right: 12rem;
         border-top-color: black solid 2px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
         text-align: center;
        
     }
@@ -44,8 +42,7 @@
         background-color: #fce181;
         display:flex;
         word-wrap: break-word;
-        word-break: break-all;
-        
+        word-break: break-all;  
     }
     .review__img figure{
         height: 300px;
@@ -57,19 +54,16 @@
     img{
         height: 295px;
         width: 395px;
-        border-radius: 5px; 
     }
      .review__content {
         margin:1rem;
         background-color: #fef9c7;
         padding: 1rem;
-        border-radius: 18px;
     }
    .review__tags__tag{
         background-color: #edeae5;
         margin-right: 6px;
-        padding: 5px;
-        border-radius: 4px;
+        padding: 4px;
         border: 1px solid black;
         display: inline;
     } 
@@ -107,9 +101,6 @@
         padding-bottom: 1rem;
         text-align: center;
         margin-bottom: 1rem;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-
     }
     .review__comment__list{
         background-color: #fef9c7;
@@ -117,43 +108,9 @@
         margin-right: 6rem;
         margin-top: 1rem;
         padding: 1rem;
-        border-radius: 18px;
-        font-size: 100%;
-        
+        font-size: 100%;  
     }
-    /* .comment__list{
-        margin-left: 12rem;
-        margin-right: 12rem;
-        background-color: #fef9c7;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        text-align: center;
-
-    } */
-    /* .add__button{
-        margin-left: 12rem;
-        margin-right: 12rem;
-        background-color: #fef9c7;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        margin-bottom: 12px;
-        text-align: center;  
-     
-    }
-
-    .add__button a{
-        text-decoration: none;
-        border: 1px solid black;
-        padding: 8px;
-        border-radius: 15px;
-        background-color: #fce181;
-        color: black;
-    }
-    .add__button a:hover{
-        background-color:#026670;
-    }    */
+    
     header {
         background-color: white;
         box-shadow: 1px 1px 1px black;

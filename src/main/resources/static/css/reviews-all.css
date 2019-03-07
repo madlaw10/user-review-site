@@ -109,7 +109,8 @@ li {
 
 .box {
   background-color: #444;
-  color: #fff;
+  color:black;
+  /* color: #fff; */
   padding: 10px;
   font-size: 150%;
 }
