@@ -1,6 +1,5 @@
 package org.wecancodeit.userreviewsite;
 
-
 import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
@@ -14,19 +13,19 @@ import org.wecancodeit.userreviewsite.repositories.ReviewTagRepository;
 
 @Service
 public class Initializer implements CommandLineRunner {
-	
+
 	@Resource
 	ReviewRepository reviewRepo;
 
 	@Resource
 	CategoryRepository categoryRepo;
-	
+
 	@Resource
 	ReviewTagRepository reviewTagRepo;
 
-
 	@Override
 	public void run(String... args) throws Exception {
+
 		ReviewTag tag1 = reviewTagRepo.save(new ReviewTag("puke"));
 		ReviewTag tag2 = reviewTagRepo.save(new ReviewTag("fight"));
 		ReviewTag tag3 = reviewTagRepo.save(new ReviewTag("banks"));
@@ -149,7 +148,7 @@ public class Initializer implements CommandLineRunner {
 		
 		
 		
+
 	}
-	
 
 }

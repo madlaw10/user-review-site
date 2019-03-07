@@ -1,6 +1,5 @@
 package org.wecancodeit.userreviewsite.repositories;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
@@ -15,8 +14,4 @@ public interface ReviewRepository extends CrudRepository<Review, Long> {
 	Review findReviewByCategory(String category);
 	
 	List<Review> OrderByRatingDesc();
-
-	Collection<Review> findAllByTitle(String title);
-
-
 }

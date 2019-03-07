@@ -55,12 +55,16 @@
       </div>
     </div>
   </header>
+
   <div class="wrapper">
       <div class="box reviews">
       <h2 class="reviews-all"> All Reviews</h2>
       <div class="review" th:each="review : ${reviews}">
+
+   
+
         <h4 class="review-title" th:text="${review.title}"> Title</h4>
-        <h4 class="review-category" th:text="${review.category}">Category</h4>
+        <h4 class="review-category" th:text="${review.category.type}">Category</h4>
         <p class="review-content" th:text="${review.content}">Content</p>
         <p class="review-rating" th:text="${review.rating}"> Rating</p>
         <!--  no date variable in review<h4 class="review-date" th:text="${review.date}"> Date</h4> -->
