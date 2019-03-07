@@ -253,14 +253,16 @@ header {
 
 .header__search__button {
   background-color: #026670;
-  border-style: none;
   border-radius: 360px;
   box-shadow: 1px 1px 1px black;
   color: white;
+  border-style: none;
+  list-style-type: none;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  height: 2rem;
-  width: 7rem;
 }
 
 .header__search__button:hover {
