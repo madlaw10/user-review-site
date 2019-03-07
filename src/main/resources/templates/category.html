@@ -68,16 +68,21 @@
                 <h2 class="review__header">
 
                     <div class="review__header__title">
-                        <a th:text="${review.title}" th:href="@{|/reviews/review/${review.id}|}">Default Title</a>
+                        <span th:text="${review.title}">Default Title</span>
                     </div>
-                    <div class="review__header__rating"> 
+                    <div class="review__header__rating">
                         <span th:text="${review.rating}">Default Rating</span>
                         <span> out of 5</span>
                     </div>
                 </h2>
-                <span>Submitted by:</span>
-                <h3 class="review__author" th:text="${review.author}">Default User</h3>
-                <p class="review__content" th:text="${review.content}">Default Review</p>
+                <h3 class="review__author">
+                    <span>Submitted by:</span>
+                    <span th:text="${review.author}">Default User</span>
+                </h3>
+                <p class="review__content"> 
+                <span th:text="${#strings.abbreviate(review.content, 20)}">Default Review</span>
+                <a th:text=" '  read more.' " th:href="@{|/reviews/review/${review.id}|}"></a>
+                </p>
                 <ul class="review__tags">
                     <span>Tagged as:</span>
                     <li class="review__tags__tag" th:each="reviewTag : ${review.reviewTags}">

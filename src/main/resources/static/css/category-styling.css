@@ -95,7 +95,7 @@ li {
 
 .review {
     background-color: white;
-    color: black;
+    color: #444;
     padding-right: 1rem;
     padding-left: 1rem;
     box-shadow: 1px 1px 1px black;
@@ -105,30 +105,44 @@ li {
     background-color: rgb(230, 230, 230);
     color: #444;
   }
+
 .review__header,
 .review__author {
   text-align: left;
-  padding: 2rem;
+  margin-left: 2rem;
+}
+
+.review__header {
+  padding-top: 2rem;
+}
+
+.review__header__title {
+  font-size: 2rem;
+}
+
+.review__header__rating {
+  font-size: 1.5rem;
+}
+
+.review__author {
+  font-size: 1rem;
 }
 
 .review__content {
-    padding: 2rem;
+  font-size: 1.5rem;
+  margin: 2rem;
+  padding-bottom: 2rem;
 }
 
 .review__tags{
-  margin-top: 1rem;
-}
-.review__tags h4{
-margin-bottom: 9px;
-}
-.review__tags__ul{
-margin-top: 1px;
+  margin-left: 2rem;
+  padding-bottom: 2rem;
 }
 
 .review__tags__tag{
   background-color: #edeae5;
-  margin-right: 6px;
-  padding: 5px;
+  margin-left: .5rem;
+  padding: .5rem;
   border-radius: 4px;
   border: 1px solid black;
   display: inline;
