@@ -28,7 +28,7 @@
     "footer footer footer"
   }
   
-  @media only screen and (min-width: 1001px) {
+  @media only screen and (min-width: 1101px) {
     .button {
       display: none;
     }
@@ -67,7 +67,7 @@
       
     }
   
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1100px) {
     .wrapper {
       background-color: #edeae5;
       color: #444;
