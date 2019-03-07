@@ -28,7 +28,7 @@
     "footer footer footer"
   }
   
-  @media only screen and (min-width: 1171px) {
+  @media only screen and (min-width: 1001px) {
     .button {
       display: none;
     }
@@ -38,9 +38,36 @@
     header {
       padding: 6px;
     }
+    .similarreviews{
+      float: right;
+    }
   }
+  @media only screen and (max-width: 769px){
+    /* .reviewform {
+      grid-area: reviewform;
+      margin-top: 80px;
+      box-shadow: 1px 1px 1px black;
+      background-color: white;
+      align-self: center;
+      width: 100%;
+      
+      align-items: left;
+    }
+    .similarreviews{
+      float: left; */
+      .reviewboxes{
+        float: none;
+        width:auto;
+        
+      }
+      .similarreviews{
+        float: left;
+      }
+      
+      
+    }
   
-  @media only screen and (max-width: 1170px) {
+  @media only screen and (max-width: 1000px) {
     .wrapper {
       background-color: #edeae5;
       color: #444;
@@ -51,6 +78,7 @@
         "reviewform"
         "footer";
     }
+    
   
     header {
       padding: 1px;
