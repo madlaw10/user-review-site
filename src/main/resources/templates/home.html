@@ -89,12 +89,12 @@
 
         <div class="box sidebar2">
             <h2 class="sidebar__header">Featured</h2>
-            <p class="sidebar__content">Check out this week's featured experiences!</p>
+            <p class="sidebar__content">Check out this week's featured experience!</p>
             <p class="sidebar__content">
                 <ul class="sidebar__content__ul">
-                    <li class="sidebar__content__li" th:each="review, reviewStat : ${reviews}">
-                        <a th:text="${review.title}" th:href="@{|/reviews/review/${review.id}|}"
-                            th:unless="${reviewStat.index > 4}">Default Experience</a>
+                    <li class="sidebar__content__li" th:each="review, reviewStat : ${reviews}" th:unless="${reviewStat.index > 0}">
+                            <img class="sidebar__photo" th:src="@{|${review.imageURL}|}"></img>
+                        <a th:text="${review.title}" th:href="@{|/reviews/review/${review.id}|}">Default Experience</a>
                     </li>
                 </ul>
             </p>
