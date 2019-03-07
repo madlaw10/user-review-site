@@ -1,19 +1,30 @@
 * {
-  margin:0;
+  margin: 0;
   font-family: sans-serif;
-  padding:0;
+  padding: 0;
   list-style-type: none;
-} 
+}
 a {
-text-decoration:  none;
+  text-decoration: none;
 }
 
-.main__body{
+  .box {
+    background-color: #444;
+    box-shadow: 1px 1px 1px black;
+    border-style: solid;
+    border-color: #444;
+    border-top: 0px;
+    border-bottom: 0px;
+
+  }
+
+.main__body {
   display: grid;
-  background-color: #9fedd7; 
+  background-color: #EDEAE5;
 }
-.title { 
-  background-color: #026670;
+
+.title {
+  background-color: #444;
   margin-top: 6rem;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -21,95 +32,162 @@ text-decoration:  none;
   margin-right: 12rem;
   border-top-color: black solid 2px;
   text-align: center;
- 
+  color: white;
 }
-h1{
+h1 {
   font-size: 58px;
 }
 
 .review__rating {
-  background-color: #fef9c7;
+  color: white;
+  background-color: #026670;
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-left: 12rem;
   margin-right: 12rem;
-  text-align: center;    
+  text-align: center;
 }
 
-.main__review{
+.main__review {
   margin-left: 12rem;
   margin-right: 12rem;
-  background-color: #fce181;
-  display:flex;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   word-wrap: break-word;
-  word-break: break-all;  
+  word-break: break-all;
 }
-.review__img figure{
-  height: 300px;
-  width: 400px;
+.review__img figure {
+  height: auto;
+  width: 100%;
   object-fit: cover;
   overflow: hidden;
-  padding: 1rem;   
+  margin-top: 10px;
 }
-img{
-  height: 295px;
-  width: 395px;
+
+.review__img {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+img {
+  height: auto;
+  width: 100%;
 }
 .review__content {
-  margin:1rem;
+  margin: 1rem;
   background-color: #fef9c7;
   padding: 1rem;
+  border: 0px;
 }
-.review__tags__tag{
+.review__tags__tag {
   background-color: #edeae5;
   margin-right: 6px;
   padding: 4px;
   border: 1px solid black;
   display: inline;
-} 
-.review__tags{
+}
+.review__tags {
   margin-top: 1rem;
+}
+.review__tags h4 {
+  margin-bottom: 9px;
+}
+.review__tags__ul {
+  margin-top: 1px;
+}
 
-}
-.review__tags h4{
-margin-bottom: 9px;
-}
-.review__tags__ul{
-margin-top: 1px;
-}
-
-ul{
+ul {
   list-style-type: none;
   text-decoration: none;
 }
-.comment__list{
+.comment__list {
   margin-left: 12rem;
   margin-right: 12rem;
-  background-color: #fce181;
+  background-color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
 }
 
-.add__comment{
-  display:flex;
+.add__comment {
+  display: flex;
   flex-direction: column;
   margin-left: 12rem;
   margin-right: 12rem;
-  background-color: #fef9c7;
+  background-color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
   margin-bottom: 1rem;
+  border-bottom: 1px;
+  border-style: solid;
 }
-.review__comment__list{
-  background-color: #fef9c7;
+.review__comment__list {
+  background-color: #EDEAE5;
   margin-left: 6rem;
   margin-right: 6rem;
   margin-top: 1rem;
   padding: 1rem;
-  font-size: 100%;  
+  font-size: 100%;
 }
+
+.footer {
+  background-color: #fce181;
+  margin: 0;
+  text-align: center;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 7px;
+}
+
+@media only screen and (min-width: 1151px) {
+  .button {
+    display: none;
+  }
+  p1.hide {
+    display: none;
+  }
+  header {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .wrapper {
+    background-color: #edeae5;
+    color: #444;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "."
+      "reviews"
+      "footer";
+  }
+
+  header {
+    padding: 1px;
+  }
+
+  .header__search__box {
+    display: none;
+  }
+
+  .header__search__button {
+    display: none;
+  }
+
+  .header__login__button {
+    display: none;
+  }
+
+  .header__review__button {
+    display: none;
+  }
+}
+
+/* Begin All  header and popup menu CSS-->  */
 
 header {
   background-color: white;
@@ -208,14 +286,16 @@ header {
 
 .header__search__button {
   background-color: #026670;
-  border-style: none;
   border-radius: 360px;
   box-shadow: 1px 1px 1px black;
   color: white;
+  border-style: none;
+  list-style-type: none;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  height: 2rem;
-  width: 7rem;
 }
 
 .header__search__button:hover {
@@ -223,8 +303,6 @@ header {
   border-radius: 360px;
   color: white;
   font-weight: bold;
-  height: 2rem;
-  width: 7rem;
 }
 
 .hide {
@@ -293,7 +371,6 @@ header {
   background-color: #026670;
   margin-top: 0;
   color: white;
-  
 }
 
 .popup .close {
@@ -330,7 +407,6 @@ header {
   flex-direction: column;
   font-size: 1rem;
 }
-
 
 .menu__login__button:hover {
   background-color: #fce181;
@@ -406,14 +482,17 @@ header {
 
 .menu__search__button {
   background-color: #026670;
-  border-style: none;
   border-radius: 360px;
   box-shadow: 1px 1px 1px black;
   color: white;
+  height: 1rem;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
-  height: 2rem;
-  width: 7rem;
 }
 
 .menu__search__button:hover {
@@ -432,35 +511,3 @@ header {
   position: absolute;
 }
 /* End all header and pop-up menu CSS */
-.footer {
-  background-color: #fce181;
-  margin: 0;
-  text-align: center;
-  color:white;
-  padding-top: 3px;
-  padding-bottom: 7px;
-  }
-
-  @media only screen and (min-width: 1171px) {
-    .button {
-      display: none;
-    }
-    p1.hide {
-      display: none;
-    }
-    header {
-      padding: 6px;
-    }
-  }
-  
-  @media only screen and (max-width: 1170px) {
-    .wrapper {
-      background-color: #edeae5;
-      color: #444;
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-areas:
-        "reviews"
-        "footer";
-    }
-  }
