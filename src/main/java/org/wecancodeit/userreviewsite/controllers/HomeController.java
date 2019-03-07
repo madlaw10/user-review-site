@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.wecancodeit.userreviewsite.models.Comment;
 import org.wecancodeit.userreviewsite.repositories.CategoryRepository;
 import org.wecancodeit.userreviewsite.repositories.CommentRepository;
 import org.wecancodeit.userreviewsite.repositories.ReviewRepository;
