@@ -17,7 +17,7 @@
             </ul>
             <ul>
                 <input class="header__search__box" type="search" value="What experience are you looking for...?">
-                <input class="header__search__button" type="submit" value="Search">
+                <a href="./all"><span class="header__search__button">Search</span></a>
             </ul>
             <ul class="header__buttons">
                 <a href="/reviews/add">
@@ -42,7 +42,7 @@
             <div class="menu__content">
                 <ul class="menu__buttons">
             <input class="menu__search__box" type="search" value="What experience are you looking for...?">
-           <input class="menu__search__button" type="submit" value="Search"></li>
+           <a href="./all"><span class="menu__search__button">Search</span></a></li>
             <a href="/reviews/add"><li class="menu__review__button">Write Review</li></a>
             <a href><li class="menu__login__button">Login</li></a>
           </ul>
@@ -52,19 +52,20 @@
     </div>
         </header>
 <!-- <body> -->
+  
     <section class= "main__body">
-    <div class= "title">
+    <div class= "box title">
         <h1 th:text="${review.title}">Default Title</h1>
         <h2 th:text="${review.category.type}">Default Category</h2>
 
     </div>
 
-    <div class= "review__rating">
+    <div class= "box review__rating">
         <h2>Rating</h2>
             <h2 th:text="${review.rating}">Default Rating</h2> (out of 5)
      </div><!--closes review__rating div-->
 
-    <section class="main__review">
+    <section class="box main__review">
      <div class= "review__img">
          <figure>
             <img th:src= "@{|${review.imageURL}|}"></img>
@@ -72,7 +73,7 @@
      </div><!--closes review__rating div-->
 
 
-    <div class = "review__content">
+    <div class = "box review__content">
         <p th:text="${review.content}">Default Review Content</p>
         <h4>Submitted by:</h4><p  th:text="${review.author}">Default Author</p></p>
         <div class = "review__tags">
@@ -87,7 +88,7 @@
 </section> <!--closes main__review section-->
       
 
-        <div class= "comment__list">
+        <div class= "box comment__list">
         <!-- List comments -->
         <ul class= "review__comments__ul">
         <li class="review__comment__list" th:each="comment : ${review.comments}">
@@ -97,7 +98,7 @@
         </div>
 
 
-        <div class= "add__comment">
+        <div class= "box add__comment">
         <!-- Add Comments -->
       
         <form th:action="|/reviews/review/${review.id}|" method="POST" class="commentbox">
@@ -108,13 +109,15 @@
             <div class="submit__button">
                 <input type="submit" name="submit" value="submit" style="width: 200px;"/>   
             </div> 
+          </div>
+          
         </form>
 
-    </div>
+    
 
-
+</div>
         </div><!--closes wrapper-->
-
+</div>
     </section><!--closes main body-->
 </body>
 <div class="box footer">
